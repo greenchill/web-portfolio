@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>David Web Portfolio</title>
+
+  <!-- Fonts: clean, modern UI face -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- Pixel button font (unchanged) -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Starry sky under everything (kept) -->
+  <!-- (unchanged SVG from your version) -->
+  <svg class="sky" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <radialGradient id="vignette" cx="20%" cy="0%" r="80%">
+        <stop offset="0%"  stop-color="#2a4f9b"/>
+        <stop offset="55%" stop-color="#1a2a3a"/>
+        <stop offset="100%" stop-color="#0b1220"/>
+      </radialGradient>
+      <g id="star4">
+        <circle r="28" fill="white" opacity=".12"/>
+        <circle r="16" fill="white" opacity=".18"/>
+        <path d="M0,-42 L3,-6 L42,0 L3,6 L0,42 L-3,6 L-42,0 L-3,-6 Z" fill="white"/>
+      </g>
+      <linearGradient id="cometTail" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="rgba(180,220,255,.85)"/>
+        <stop offset="100%" stop-color="rgba(180,220,255,0)"/>
+      </linearGradient>
+    </defs>
+
+    <rect width="100%" height="100%" fill="url(#vignette)"></rect>
+
+    <g class="stars stars-front">
+      <use href="#star4" x="260"  y="150"/><use href="#star4" x="680"  y="240"/>
+      <use href="#star4" x="1120" y="180"/><use href="#star4" x="1500" y="140"/>
+      <use href="#star4" x="430"  y="560"/><use href="#star4" x="980"  y="520"/>
+      <use href="#star4" x="1420" y="600"/>
+    </g>
+    <g class="stars stars-mid">
+      <use href="#star4" x="180"  y="380"/><use href="#star4" x="560"  y="420"/>
+      <use href="#star4" x="820"  y="350"/><use href="#star4" x="1280" y="430"/>
+      <use href="#star4" x="1650" y="360"/><use href="#star4" x="300"  y="860"/>
+      <use href="#star4" x="760"  y="920"/><use href="#star4" x="1380" y="880"/>
+    </g>
+    <g class="stars stars-back">
+      <use href="#star4" x="90"   y="90"/><use href="#star4" x="420"  y="120"/>
+      <use href="#star4" x="920"  y="90"/><use href="#star4" x="1720" y="110"/>
+      <use href="#star4" x="180"  y="720"/><use href="#star4" x="520"  y="780"/>
+      <use href="#star4" x="980"  y="760"/><use href="#star4" x="1600" y="820"/>
+    </g>
+
+    <g class="comets">
+      <g class="comet c1" transform="translate(1600,200)">
+        <circle r="2.4" fill="white"/>
+        <rect x="-220" y="-1.2" width="220" height="2.4" fill="url(#cometTail)"/>
+      </g>
+      <g class="comet c2" transform="translate(320,740)">
+        <circle r="2.2" fill="white"/>
+        <rect x="-180" y="-1.1" width="180" height="2.2" fill="url(#cometTail)"/>
+      </g>
+    </g>
+  </svg>
+
+  <!-- Click sparks -->
+  <div class="spark-layer" aria-hidden="true"></div>
+
+  <!-- NAVBAR (new) -->
+  <header class="navbar glass">
+    <a class="brand" href="#home">David K</a>
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="mailto:kitunovdavid57@gmail.com">Contact</a>
+    </nav>
+    <div class="nav-social">
+      <a target="_blank" href="https://github.com/greenchill" aria-label="GitHub">
+        <i class="fa-brands fa-square-github"></i>
+      </a>
+      <a target="_blank" href="https://www.linkedin.com/in/davidkitunov/" aria-label="LinkedIn">
+        <i class="fa-brands fa-square-linkedin"></i>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Intro -->
+    <section id="home">
+      <div class="intro-header">
+        <h1 id="typed-title">Hola! I'm David…</h1>
+        <p class="subtitle">Software Developer</p>
+      </div>
+
+      <p class="intro-description">
+        I’m a third-year CS student passionate about turning ideas into working software.
+        I enjoy building full-stack projects with modern technologies like React, Next.js, Node.js, and SQL.
+        My background includes experience with Java, Python, and C, along with hands-on projects in web development.
+        I’m highly motivated, eager to learn quickly, and focused on starting my career as a software developer in tech industry.
+      </p>
+
+      <div class="links-container">
+        <a class="link-ghost" href="mailto:kitunovdavid57@gmail.com"><i class="fa-solid fa-right-to-bracket"></i> Email Me</a>
+        <a class="link-ghost" target="_blank" href="https://github.com/greenchill">GitHub</a>
+        <a class="link-ghost" target="_blank" href="https://www.linkedin.com/in/davidkitunov/">LinkedIn</a>
+      </div>
+
+      <!-- Mini-game -->
+      <div id="mini-game">
+        <button id="play-btn" class="btn-pixel pixel-glow game-btn">Play game???</button>
+      </div>
+      <div class="color-div" style="display:none;">
+        <h4>Pick a color</h4>
+        <p style="display:none;">Great.. now it's ruined!</p>
+        <input type="color" id="color-picker" value="#0084ff" />
+        <button id="reset-btn" class="btn-pixel pixel-glow game-btn" style="display:none;">Reset</button>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills-container glass">
+        <table>
+          <thead>
+            <tr><th>Area</th><th>Technologies</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>JavaScript</td><td>ReactJS | React Native | NextJS | NodeJS &amp; ExpressJS</td></tr>
+            <tr><td>Python</td><td>Data analysis | Data visualization</td></tr>
+            <tr><td>Web</td><td>Firebase | Mongoose | MySQL | Git | Docker | CI/CD</td></tr>
+            <tr><td>Design</td><td>Canvas | Pxlr | Microsoft Paint | Photoshop</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <div class="cards-grid">
+        <article class="project-card">
+          <div class="text-div">
+            <p class="meta">Oct 13, 2025</p>
+            <h3>Brogram</h3>
+            <div class="tech-list">
+              <span class="chip">ReactJS</span>
+              <span class="chip">Tailwind</span>
+               <span class="chip">JavaScript</span>
+            </div>
+            <p>The 30 Simple Workout Program.</p>
+            <div class="project-links">
+              <a class="link-ghost" target="_blank" href="https://sweet-tiramisu-5bb5a9.netlify.app/">Live</a>
+              <a class="link-ghost" target="_blank" href="https://github.com/greenchill/brogram">GitHub</a>
+            </div>
+          </div>
+
+          <div class="img-div">
+            <img class="big-img" src="/public/broimg.png" alt="Brogram-Site" />
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>By David — the repo on <a target="_blank" class="link-ghost" href="/">GitHub</a> 💫</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
