@@ -1,217 +1,526 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>David Web Portfolio</title>
 
-  <!-- Fonts: clean, modern UI face -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <!-- Pixel button font (unchanged) -->
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>David Kitunov | DevOps & Software Developer</title>
+  <meta name="description"
+    content="David Kitunov - Aspiring DevOps Engineer & Software Developer. CS Student passionate about cloud technologies, automation, and building scalable systems.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Icons -->
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+  <!-- Background Effects -->
+  <div class="bg-gradient"></div>
+  <div class="bg-grid"></div>
+  <div class="glow-orb glow-orb-1"></div>
+  <div class="glow-orb glow-orb-2"></div>
 
-  <!-- Starry sky under everything (kept) -->
-  <!-- (unchanged SVG from your version) -->
-  <svg class="sky" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-    <defs>
-      <radialGradient id="vignette" cx="20%" cy="0%" r="80%">
-        <stop offset="0%"  stop-color="#2a4f9b"/>
-        <stop offset="55%" stop-color="#1a2a3a"/>
-        <stop offset="100%" stop-color="#0b1220"/>
-      </radialGradient>
-      <g id="star4">
-        <circle r="28" fill="white" opacity=".12"/>
-        <circle r="16" fill="white" opacity=".18"/>
-        <path d="M0,-42 L3,-6 L42,0 L3,6 L0,42 L-3,6 L-42,0 L-3,-6 Z" fill="white"/>
-      </g>
-      <linearGradient id="cometTail" x1="0" y1="0" x2="1" y2="0">
-        <stop offset="0%" stop-color="rgba(180,220,255,.85)"/>
-        <stop offset="100%" stop-color="rgba(180,220,255,0)"/>
-      </linearGradient>
-    </defs>
+  <!-- Floating Particles -->
+  <div class="particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
 
-    <rect width="100%" height="100%" fill="url(#vignette)"></rect>
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="container">
+      <a href="#hero" class="nav-brand">David<span>.</span></a>
 
-    <g class="stars stars-front">
-      <use href="#star4" x="260"  y="150"/><use href="#star4" x="680"  y="240"/>
-      <use href="#star4" x="1120" y="180"/><use href="#star4" x="1500" y="140"/>
-      <use href="#star4" x="430"  y="560"/><use href="#star4" x="980"  y="520"/>
-      <use href="#star4" x="1420" y="600"/>
-    </g>
-    <g class="stars stars-mid">
-      <use href="#star4" x="180"  y="380"/><use href="#star4" x="560"  y="420"/>
-      <use href="#star4" x="820"  y="350"/><use href="#star4" x="1280" y="430"/>
-      <use href="#star4" x="1650" y="360"/><use href="#star4" x="300"  y="860"/>
-      <use href="#star4" x="760"  y="920"/><use href="#star4" x="1380" y="880"/>
-    </g>
-    <g class="stars stars-back">
-      <use href="#star4" x="90"   y="90"/><use href="#star4" x="420"  y="120"/>
-      <use href="#star4" x="920"  y="90"/><use href="#star4" x="1720" y="110"/>
-      <use href="#star4" x="180"  y="720"/><use href="#star4" x="520"  y="780"/>
-      <use href="#star4" x="980"  y="760"/><use href="#star4" x="1600" y="820"/>
-    </g>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
 
-    <g class="comets">
-      <g class="comet c1" transform="translate(1600,200)">
-        <circle r="2.4" fill="white"/>
-        <rect x="-220" y="-1.2" width="220" height="2.4" fill="url(#cometTail)"/>
-      </g>
-      <g class="comet c2" transform="translate(320,740)">
-        <circle r="2.2" fill="white"/>
-        <rect x="-180" y="-1.1" width="180" height="2.2" fill="url(#cometTail)"/>
-      </g>
-    </g>
-  </svg>
+      <div class="nav-social">
+        <a href="https://github.com/greenchill" target="_blank" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/davidkitunov/" target="_blank" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      </div>
 
-  <!-- Click sparks -->
-  <div class="spark-layer" aria-hidden="true"></div>
-
-  <!-- NAVBAR (new) -->
-  <header class="navbar glass">
-    <a class="brand" href="#home">David K</a>
-    <nav class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="mailto:kitunovdavid57@gmail.com">Contact</a>
-    </nav>
-    <div class="nav-social">
-      <a target="_blank" href="https://github.com/greenchill" aria-label="GitHub">
-        <i class="fa-brands fa-square-github"></i>
-      </a>
-      <a target="_blank" href="https://www.linkedin.com/in/davidkitunov/" aria-label="LinkedIn">
-        <i class="fa-brands fa-square-linkedin"></i>
-      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
 
   <main>
-    <!-- Intro -->
-    <section id="home">
-      <div class="intro-header">
-        <h1 id="typed-title">Hola! I'm David…</h1>
-        <p class="subtitle">Software Developer</p>
-      </div>
+    <!-- Hero Section -->
+    <section id="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="fa-solid fa-circle"></i>
+            <span>Available for opportunities</span>
+          </div>
 
-      <p class="intro-description">
-        I’m a third-year CS student passionate about turning ideas into working software.
-        I enjoy building full-stack projects with modern technologies like React, Next.js, Node.js, and SQL.
-        My background includes experience with Java, Python, and C, along with hands-on projects in web development.
-        I’m highly motivated, eager to learn quickly, and focused on starting my career as a software developer in tech industry.
-      </p>
+          <h1 class="hero-title">
+            <span class="greeting">Hello, I'm</span>
+            <span class="name gradient-text" id="typed-name">David Kitunov</span>
+          </h1>
 
-      <div class="links-container">
-        <a class="link-ghost" href="mailto:kitunovdavid57@gmail.com"><i class="fa-solid fa-right-to-bracket"></i> Email Me</a>
-        <a class="link-ghost" target="_blank" href="https://github.com/greenchill">GitHub</a>
-        <a class="link-ghost" target="_blank" href="https://www.linkedin.com/in/davidkitunov/">LinkedIn</a>
-        <a class="link-ghost" target="_blank"  href="/CV.pdf" download="David_Kitunov_CV.pdf">CV</a>
-      </div>
+          <p class="hero-subtitle">
+            Aspiring <span class="gradient-text">DevOps Engineer</span> & Software Developer
+          </p>
 
-      <!-- Mini-game -->
-      <div id="mini-game">
-        <button id="play-btn" class="btn-pixel pixel-glow game-btn">Play game???</button>
-      </div>
-      <div class="color-div" style="display:none;">
-        <h4>Pick a color</h4>
-        <p style="display:none;">Great.. now it's ruined!</p>
-        <input type="color" id="color-picker" value="#0084ff" />
-        <button id="reset-btn" class="btn-pixel pixel-glow game-btn" style="display:none;">Reset</button>
+          <p class="hero-description">
+            Third-year Computer Science student with a passion for cloud technologies,
+            automation, and building scalable systems. Currently working as a NOC Engineer
+            at Ness, focusing on monitoring, infrastructure, and operational excellence.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">
+              <i class="fa-solid fa-rocket"></i>
+              View Projects
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <i class="fa-solid fa-envelope"></i>
+              Contact Me
+            </a>
+            <a href="/CV.pdf" download="David_Kitunov_CV.pdf" class="btn btn-secondary">
+              <i class="fa-solid fa-download"></i>
+              Download CV
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-number">CS</div>
+              <div class="stat-label">Student (3rd Year)</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">2<span>+</span></div>
+              <div class="stat-label">Live Projects</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">NOC</div>
+              <div class="stat-label">Engineer @ Ness</div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Skills -->
+    <!-- About Section -->
+    <section id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-image reveal">
+            <div class="about-image-wrapper">
+              <img src="/public/profile.png" alt="David Kitunov">
+            </div>
+          </div>
+
+          <div class="about-content reveal">
+            <h2>About <span class="gradient-text">Me</span></h2>
+
+            <div class="about-text">
+              <p>
+                I'm a dedicated Computer Science student on a mission to become a DevOps Engineer.
+                My journey in tech started with a curiosity for how things work behind the scenes,
+                which led me to explore both software development and infrastructure.
+              </p>
+              <p>
+                Recently, I joined Ness as a NOC Engineer, where I'm gaining hands-on experience
+                with monitoring systems, incident response, and infrastructure management. This role
+                is strengthening my foundation in operations while I continue to develop my
+                automation and cloud skills.
+              </p>
+              <p>
+                I'm passionate about bridging the gap between development and operations,
+                building CI/CD pipelines, containerization with Docker, and creating efficient,
+                scalable systems.
+              </p>
+            </div>
+
+            <div class="about-info">
+              <div class="info-item">
+                <i class="fa-solid fa-user"></i>
+                <div>
+                  <span>Name</span>
+                  <strong>David Kitunov</strong>
+                </div>
+              </div>
+              <div class="info-item">
+                <i class="fa-solid fa-envelope"></i>
+                <div>
+                  <span>Email</span>
+                  <strong>kitunovdavid57@gmail.com</strong>
+                </div>
+              </div>
+              <div class="info-item">
+                <i class="fa-solid fa-briefcase"></i>
+                <div>
+                  <span>Current Role</span>
+                  <strong>NOC Engineer @ Ness</strong>
+                </div>
+              </div>
+              <div class="info-item">
+                <i class="fa-solid fa-crosshairs"></i>
+                <div>
+                  <span>Goal</span>
+                  <strong>DevOps Engineer</strong>
+                </div>
+              </div>
+            </div>
+
+            <a href="#contact" class="btn btn-primary">
+              <i class="fa-solid fa-paper-plane"></i>
+              Let's Connect
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
     <section id="skills">
-      <h2>Skills</h2>
-      <div class="skills-container glass">
-        <table>
-          <thead>
-            <tr><th>Area</th><th>Technologies</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>JavaScript</td><td>ReactJS | React Native | NextJS | NodeJS &amp; ExpressJS</td></tr>
-            <tr><td>Python</td><td>Data analysis | Data visualization</td></tr>
-            <tr><td>Web</td><td>Firebase | Mongoose | MySQL | Git | Docker | CI/CD</td></tr>
-            <tr><td>Design</td><td>Canvas | Pxlr | Microsoft Paint | Photoshop</td></tr>
-          </tbody>
-        </table>
+      <div class="container">
+        <div class="section-title reveal">
+          <h2>Technical <span class="gradient-text">Skills</span></h2>
+          <p class="section-subtitle">Technologies and tools I work with</p>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-card reveal">
+            <div class="skill-icon">
+              <i class="fa-brands fa-docker"></i>
+            </div>
+            <h3>DevOps & Cloud</h3>
+            <p>Building and automating infrastructure with modern tools</p>
+            <div class="skill-tags">
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">CI/CD</span>
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">Linux</span>
+              <span class="skill-tag">Monitoring</span>
+            </div>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-icon">
+              <i class="fa-brands fa-react"></i>
+            </div>
+            <h3>Frontend Development</h3>
+            <p>Creating modern, responsive user interfaces</p>
+            <div class="skill-tags">
+              <span class="skill-tag">React</span>
+              <span class="skill-tag">Next.js</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">Tailwind</span>
+              <span class="skill-tag">CSS</span>
+            </div>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-icon">
+              <i class="fa-brands fa-node-js"></i>
+            </div>
+            <h3>Backend Development</h3>
+            <p>Building scalable server-side applications</p>
+            <div class="skill-tags">
+              <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">Express</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">REST APIs</span>
+            </div>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-icon">
+              <i class="fa-solid fa-database"></i>
+            </div>
+            <h3>Databases</h3>
+            <p>Working with various database technologies</p>
+            <div class="skill-tags">
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">MongoDB</span>
+              <span class="skill-tag">Firebase</span>
+              <span class="skill-tag">Mongoose</span>
+            </div>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-icon">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <h3>Programming Languages</h3>
+            <p>Core languages for software development</p>
+            <div class="skill-tags">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">C</span>
+              <span class="skill-tag">C++</span>
+              <span class="skill-tag">SQL</span>
+            </div>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-icon">
+              <i class="fa-solid fa-network-wired"></i>
+            </div>
+            <h3>NOC & Operations</h3>
+            <p>Infrastructure monitoring and incident management</p>
+            <div class="skill-tags">
+              <span class="skill-tag">CheckMK</span>
+              <span class="skill-tag">Monitoring</span>
+              <span class="skill-tag">Incident Response</span>
+              <span class="skill-tag">Linux</span>
+              <span class="skill-tag">Networking</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Projects -->
+    <!-- Experience Section -->
+    <section id="experience">
+      <div class="container">
+        <div class="section-title reveal">
+          <h2>Work <span class="gradient-text">Experience</span></h2>
+          <p class="section-subtitle">My professional journey</p>
+        </div>
+
+        <div class="experience-grid">
+          <div class="experience-card reveal">
+            <div class="experience-header">
+              <div>
+                <h3>NOC Engineer</h3>
+                <p class="experience-company">Ness Technologies</p>
+              </div>
+              <span class="experience-date">Jan 2026 - Present</span>
+            </div>
+            <ul>
+              <li>Monitoring infrastructure using CheckMK and other alerting tools</li>
+              <li>Responding to incidents and performing root cause analysis</li>
+              <li>Working with Linux servers and network infrastructure</li>
+              <li>Collaborating with DevOps and development teams on incident resolution</li>
+              <li>Developing scripts to automate routine monitoring tasks</li>
+            </ul>
+          </div>
+
+          <div class="experience-card reveal">
+            <div class="experience-header">
+              <div>
+                <h3>Air Force Personnel NCO</h3>
+                <p class="experience-company">IDF Personnel Directorate</p>
+              </div>
+              <span class="experience-date">2022 - 2025</span>
+            </div>
+            <ul>
+              <li>Managed administrative tasks and personnel data for Air Force population</li>
+              <li>Handled documentation, records, and data processing</li>
+              <li>Developed organizational skills and attention to detail</li>
+              <li>Worked in a structured, deadline-driven environment</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+      <div class="container">
+        <div class="section-title reveal">
+          <h2>My <span class="gradient-text">Education</span></h2>
+          <p class="section-subtitle">Academic background and achievements</p>
+        </div>
+
+        <div class="education-content">
+          <div class="education-card reveal">
+            <div class="education-header">
+              <div class="education-icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </div>
+              <div class="education-info">
+                <h3>B.Sc. Computer Science</h3>
+                <p>Holon Institute of Technology (HIT)</p>
+                <p>Expected Graduation: 2026</p>
+              </div>
+            </div>
+
+            <div class="education-courses">
+              <h4>Relevant Coursework</h4>
+              <div class="course-tags">
+                <span class="course-tag">Data Structures & Algorithms</span>
+                <span class="course-tag">Software Engineering</span>
+                <span class="course-tag">Databases</span>
+                <span class="course-tag">Operating Systems</span>
+                <span class="course-tag">Machine Learning</span>
+                <span class="course-tag">Object-Oriented Programming</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
     <section id="projects">
-      <h2>Projects</h2>
+      <div class="container">
+        <div class="section-title reveal">
+          <h2>Featured <span class="gradient-text">Projects</span></h2>
+          <p class="section-subtitle">Some of my recent work</p>
+        </div>
 
-      <div class="cards-grid">
-        <article class="project-card">
-          <div class="text-div">
-            <p class="meta">Sep 3, 2025</p>
-            <h3>Brogram</h3>
-            <div class="tech-list">
-              <span class="chip">ReactJS</span>
-              <span class="chip">Tailwind</span>
-               <span class="chip">JavaScript</span>
-               <span class="chip">CSS</span>
+        <div class="projects-grid">
+          <article class="project-card reveal">
+            <div class="project-image">
+              <img src="/public/broimg.png" alt="Brogram - Workout Application">
             </div>
-            <p>The 30 Simple Workout Program.</p>
-            <div class="project-links">
-              <a class="link-ghost" target="_blank" href="https://sweet-tiramisu-5bb5a9.netlify.app/">Live</a>
-              <a class="link-ghost" target="_blank" href="https://github.com/greenchill/brogram">GitHub</a>
+            <div class="project-content">
+              <span class="project-date">September 2025</span>
+              <h3>Brogram</h3>
+              <p>
+                A 30-day simple workout program application. Built with React and
+                modern UI practices, featuring an intuitive interface for tracking
+                daily workouts and progress.
+              </p>
+              <div class="project-stack">
+                <span class="stack-tag">React</span>
+                <span class="stack-tag">Tailwind CSS</span>
+                <span class="stack-tag">JavaScript</span>
+              </div>
+              <div class="project-links">
+                <a href="https://sweet-tiramisu-5bb5a9.netlify.app/" target="_blank" class="btn btn-primary">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  Live Demo
+                </a>
+                <a href="https://github.com/greenchill/brogram" target="_blank" class="btn btn-ghost">
+                  <i class="fa-brands fa-github"></i>
+                  Source Code
+                </a>
+              </div>
             </div>
-          </div>
+          </article>
 
-          <div class="img-div">
-            <img class="big-img" src="/public/broimg.png" alt="Brogram-Site" />
-          </div>
-        </article>
+          <article class="project-card reveal">
+            <div class="project-image">
+              <img src="/public/demostore.png" alt="Stripe Store - E-commerce">
+            </div>
+            <div class="project-content">
+              <span class="project-date">October 2025</span>
+              <h3>Stripe Store</h3>
+              <p>
+                A modern e-commerce store with Stripe payment integration.
+                Features a clean product catalog, shopping cart functionality,
+                and secure checkout process.
+              </p>
+              <div class="project-stack">
+                <span class="stack-tag">Next.js</span>
+                <span class="stack-tag">Stripe</span>
+                <span class="stack-tag">Tailwind CSS</span>
+              </div>
+              <div class="project-links">
+                <a href="https://demostripestore.netlify.app/" target="_blank" class="btn btn-primary">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  Live Demo
+                </a>
+                <a href="https://github.com/greenchill/demostore" target="_blank" class="btn btn-ghost">
+                  <i class="fa-brands fa-github"></i>
+                  Source Code
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
+    </section>
 
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-title reveal">
+          <h2>Get In <span class="gradient-text">Touch</span></h2>
+          <p class="section-subtitle">Let's connect and discuss opportunities</p>
+        </div>
 
+        <div class="contact-content reveal">
+          <p>
+            I'm currently looking for DevOps and software development opportunities.
+            Whether you have a question or just want to say hi, feel free to reach out!
+          </p>
 
-       <div class="cards-grid">
-        <article class="project-card">
-          <div class="text-div">
-            <p class="meta">Oct 26, 2025</p>
-            <h3>Stripe Store</h3>
-            <div class="tech-list">
-              <span class="chip">NextJS</span>
-              <span class="chip">Stripe</span>
-              <span class="chip">Tailwind</span>
-              <span class="chip">JavaScript</span>
-              <span class="chip">CSS</span>
-            </div>
-            <p>The modern stripe sticker/planner store.</p>
-            <div class="project-links">
-              <a class="link-ghost" target="_blank" href="https://demostripestore.netlify.app/">Live</a>
-              <a class="link-ghost" target="_blank" href="https://github.com/greenchill/demostore">GitHub</a>
-            </div>
+          <div class="contact-buttons">
+            <a href="mailto:kitunovdavid57@gmail.com" class="btn btn-primary">
+              <i class="fa-solid fa-envelope"></i>
+              Send Email
+            </a>
+            <a href="/CV.pdf" download="David_Kitunov_CV.pdf" class="btn btn-secondary">
+              <i class="fa-solid fa-file-arrow-down"></i>
+              Download Resume
+            </a>
           </div>
 
-          <div class="img-div">
-            <img class="big-img" src="/public/demostore.png" alt="DemoStore-Site" />
+          <div class="contact-social">
+            <a href="https://github.com/greenchill" target="_blank" class="social-link" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/davidkitunov/" target="_blank" class="social-link"
+              aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="mailto:kitunovdavid57@gmail.com" class="social-link" aria-label="Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
           </div>
-        </article>
+        </div>
       </div>
-
-
-
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
-    <p>By David — the repo on <a target="_blank" class="link-ghost" href="/">GitHub</a> 💫</p>
+    <div class="container">
+      <p>
+        © 2026 David Kitunov. Built with passion.
+        <a href="https://github.com/greenchill/web-portfolio" target="_blank">View Source</a>
+      </p>
+    </div>
   </footer>
 
   <script src="app.js"></script>
 </body>
+
 </html>
