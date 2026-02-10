@@ -5,6 +5,7 @@
 
 // ===== DOM Elements =====
 const navbar = document.querySelector('.navbar');
+const navProgressBar = document.querySelector('.nav-progress-bar');
 const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
 const revealElements = document.querySelectorAll('.reveal');
@@ -19,10 +20,18 @@ function handleNavbarScroll() {
   } else {
     navbar.classList.remove('scrolled');
   }
-  
+
+  // Keep a lightweight progress indicator in the navbar.
+  if (navProgressBar) {
+    const doc = document.documentElement;
+    const scrollable = doc.scrollHeight - doc.clientHeight;
+    const progress = scrollable > 0 ? (currentScroll / scrollable) * 100 : 0;
+    navProgressBar.style.width = `${Math.min(100, Math.max(0, progress)).toFixed(2)}%`;
+  }
 }
 
 window.addEventListener('scroll', handleNavbarScroll, { passive: true });
+window.addEventListener('load', handleNavbarScroll);
 
 // ===== Mobile Navigation Toggle =====
 if (navToggle && navLinks) {
@@ -179,13 +188,50 @@ document.querySelectorAll('.skill-card').forEach(card => {
 
 // ===== Project Cards Image Loading =====
 document.querySelectorAll('.project-image img').forEach(img => {
+  const card = img.closest('.project-card');
+
+  function applyCardTint() {
+    if (!card || !img.naturalWidth || !img.naturalHeight) return;
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    // Downsample aggressively for speed, then average visible pixels.
+    canvas.width = 32;
+    canvas.height = 32;
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    const { data } = ctx.getImageData(0, 0, canvas.width, canvas.height);
+
+    let r = 0;
+    let g = 0;
+    let b = 0;
+    let count = 0;
+
+    for (let i = 0; i < data.length; i += 4) {
+      const alpha = data[i + 3];
+      if (alpha < 20) continue;
+      r += data[i];
+      g += data[i + 1];
+      b += data[i + 2];
+      count++;
+    }
+
+    if (!count) return;
+    const avgR = Math.round(r / count);
+    const avgG = Math.round(g / count);
+    const avgB = Math.round(b / count);
+    card.style.setProperty('--project-tint', `${avgR}, ${avgG}, ${avgB}`);
+  }
+
   img.addEventListener('load', function() {
     this.classList.add('loaded');
+    applyCardTint();
   });
   
   // Handle already cached images
   if (img.complete) {
     img.classList.add('loaded');
+    applyCardTint();
   }
 });
 

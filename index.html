@@ -11,7 +11,9 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet">
 
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -60,6 +62,7 @@
           <li><a href="#hero">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
+          <li><a href="#workflow">Workflow</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -81,47 +84,51 @@
         <span></span>
       </button>
     </div>
+    <div class="nav-progress" aria-hidden="true">
+      <span class="nav-progress-bar"></span>
+    </div>
   </header>
 
   <main>
     <!-- Hero Section -->
     <section id="hero">
       <div class="container">
-        <div class="hero-content">
-          <div class="hero-badge">
-            <i class="fa-solid fa-circle"></i>
-            <span>Available for opportunities</span>
-          </div>
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="hero-badge">
+              <i class="fa-solid fa-circle"></i>
+              <span>Available for opportunities</span>
+            </div>
 
-          <h1 class="hero-title">
-            <span class="greeting">Hello, I'm</span>
-            <span class="name gradient-text" id="typed-name">David Kitunov</span>
-          </h1>
+            <h1 class="hero-title">
+              <span class="greeting">Hello, I'm</span>
+              <span class="name gradient-text" id="typed-name">David Kitunov</span>
+            </h1>
 
-          <p class="hero-subtitle">
-            Aspiring <span class="gradient-text">DevOps Engineer</span> & Software Developer
-          </p>
+            <p class="hero-subtitle">
+              Aspiring <span class="gradient-text">DevOps Engineer</span> & Software Developer
+            </p>
 
-          <p class="hero-description">
-            Third-year Computer Science student with a passion for cloud technologies,
-            automation, and building scalable systems. Currently working as a NOC Engineer
-            at Ness, focusing on monitoring, infrastructure, and operational excellence.
-          </p>
+            <p class="hero-description">
+              Third-year Computer Science student focused on reliability, observability,
+              and practical software delivery. Currently working as a NOC Engineer at Ness,
+              improving incident quality and operational stability.
+            </p>
 
-          <div class="hero-buttons">
-            <a href="#projects" class="btn btn-primary">
-              <i class="fa-solid fa-rocket"></i>
-              View Projects
-            </a>
-            <a href="#contact" class="btn btn-secondary">
-              <i class="fa-solid fa-envelope"></i>
-              Contact Me
-            </a>
-            <a href="/CV.pdf" download="David_Kitunov_CV.pdf" class="btn btn-secondary">
-              <i class="fa-solid fa-download"></i>
-              Download CV
-            </a>
-          </div>
+            <div class="hero-buttons">
+              <a href="#projects" class="btn btn-primary">
+                <i class="fa-solid fa-rocket"></i>
+                View Projects
+              </a>
+              <a href="#contact" class="btn btn-secondary">
+                <i class="fa-solid fa-envelope"></i>
+                Contact Me
+              </a>
+              <a href="/CV.pdf" download="David_Kitunov_CV.pdf" class="btn btn-secondary">
+                <i class="fa-solid fa-download"></i>
+                Download CV
+              </a>
+            </div>
 
             <div class="hero-stats">
               <div class="stat-item">
@@ -135,8 +142,40 @@
               <div class="stat-item">
                 <div class="stat-number">NOC</div>
                 <div class="stat-label">Engineer @ Ness</div>
+              </div>
             </div>
           </div>
+
+          <aside class="hero-console reveal">
+            <div class="console-header">
+              <span class="console-dot"></span>
+              <span class="console-title">Ops Snapshot</span>
+              <span class="console-time">Live profile</span>
+            </div>
+            <div class="console-lines">
+              <div class="console-line">
+                <span class="console-key">Role</span>
+                <span class="console-value">NOC Engineer @ Ness</span>
+              </div>
+              <div class="console-line">
+                <span class="console-key">Focus</span>
+                <span class="console-value">Monitoring, Incident Response, Linux</span>
+              </div>
+              <div class="console-line">
+                <span class="console-key">Track</span>
+                <span class="console-value">DevOps / Platform Engineering</span>
+              </div>
+            </div>
+            <div class="pipeline-map">
+              <span class="pipe-node online">Observe</span>
+              <span class="pipe-link"></span>
+              <span class="pipe-node online">Diagnose</span>
+              <span class="pipe-link"></span>
+              <span class="pipe-node online">Resolve</span>
+              <span class="pipe-link"></span>
+              <span class="pipe-node">Improve</span>
+            </div>
+          </aside>
         </div>
       </div>
     </section>
@@ -323,6 +362,42 @@
       </div>
     </section>
 
+    <!-- Workflow Section -->
+    <section id="workflow">
+      <div class="container">
+        <div class="section-title reveal">
+          <h2>How I <span class="gradient-text">Work</span></h2>
+          <p class="section-subtitle">My process for shipping reliable software and operations improvements</p>
+        </div>
+
+        <div class="workflow-grid">
+          <article class="workflow-step reveal">
+            <span class="workflow-index">01</span>
+            <h3>Observe and Frame</h3>
+            <p>I start with signals: logs, alerts, failure reports, and user impact. The first goal is a clear problem statement.</p>
+          </article>
+
+          <article class="workflow-step reveal">
+            <span class="workflow-index">02</span>
+            <h3>Design the Fix</h3>
+            <p>I choose the smallest reliable change first, then define what success looks like before implementation.</p>
+          </article>
+
+          <article class="workflow-step reveal">
+            <span class="workflow-index">03</span>
+            <h3>Ship and Validate</h3>
+            <p>I validate behavior with practical checks, edge-case testing, and simple rollback-safe deployment steps.</p>
+          </article>
+
+          <article class="workflow-step reveal">
+            <span class="workflow-index">04</span>
+            <h3>Document and Improve</h3>
+            <p>Each fix ends with clean notes and follow-up improvements so the same issue is easier to handle next time.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- Experience Section -->
     <section id="experience">
       <div class="container">
@@ -344,8 +419,8 @@
               <li>Monitoring infrastructure using CheckMK and other alerting tools</li>
               <li>Responding to incidents and performing root cause analysis</li>
               <li>Working with Linux servers and network infrastructure</li>
-              <li>Collaborating with DevOps and development teams on incident resolution</li>
-              <li>Developing scripts to automate routine monitoring tasks</li>
+              <li>Coordinating incident communication and escalation during production issues</li>
+              <li>Maintaining clear runbooks and handover notes for stable operations</li>
             </ul>
           </div>
 
@@ -421,11 +496,24 @@
             <div class="project-content">
               <span class="project-date">September 2025</span>
               <h3>Brogram</h3>
-              <p>
-                A 30-day simple workout program application. Built with React and
-                modern UI practices, featuring an intuitive interface for tracking
-                daily workouts and progress.
-              </p>
+              <div class="project-story">
+                <div class="story-row">
+                  <span>Problem</span>
+                  <p>Most beginner workout apps feel overloaded and hard to follow daily.</p>
+                </div>
+                <div class="story-row">
+                  <span>Solution</span>
+                  <p>Built a focused 30-day React program with low-friction UX and clear daily progression.</p>
+                </div>
+                <div class="story-row">
+                  <span>Result</span>
+                  <p>Delivered a lightweight routine tracker with consistent completion flow.</p>
+                </div>
+              </div>
+              <div class="project-metrics">
+                <span class="metric-tag">30-Day Program</span>
+                <span class="metric-tag">Mobile First</span>
+              </div>
               <div class="project-stack">
                 <span class="stack-tag">React</span>
                 <span class="stack-tag">Tailwind CSS</span>
@@ -451,10 +539,24 @@
             <div class="project-content">
               <span class="project-date">February 2026</span>
               <h3>SignLangModel</h3>
-              <p>
-                Real-time ASL alphabet recognition using MediaPipe landmarks and a compact TensorFlow classifier.
-                Includes webcam demo, Kaggle training pipeline, and research PDF - model stays under 1 MB for smooth live inference.
-              </p>
+              <div class="project-story">
+                <div class="story-row">
+                  <span>Problem</span>
+                  <p>Image-based sign recognition can be heavy and unstable across lighting and background changes.</p>
+                </div>
+                <div class="story-row">
+                  <span>Solution</span>
+                  <p>Used MediaPipe landmarks and a compact TensorFlow model with Kaggle training and webcam inference.</p>
+                </div>
+                <div class="story-row">
+                  <span>Result</span>
+                  <p>Built a responsive recognizer with reproducible artifacts and a research-ready report.</p>
+                </div>
+              </div>
+              <div class="project-metrics">
+                <span class="metric-tag">Model &lt; 1 MB</span>
+                <span class="metric-tag">Real-time Inference</span>
+              </div>
               <div class="project-stack">
                 <span class="stack-tag">TensorFlow</span>
                 <span class="stack-tag">MediaPipe</span>
@@ -481,11 +583,24 @@
             <div class="project-content">
               <span class="project-date">October 2025</span>
               <h3>Stripe Store</h3>
-              <p>
-                A modern e-commerce store with Stripe payment integration.
-                Features a clean product catalog, shopping cart functionality,
-                and secure checkout process.
-              </p>
+              <div class="project-story">
+                <div class="story-row">
+                  <span>Problem</span>
+                  <p>Needed an e-commerce demo that feels production-ready, not just a static storefront.</p>
+                </div>
+                <div class="story-row">
+                  <span>Solution</span>
+                  <p>Built a Next.js storefront with Stripe payments, clear catalog flow, and secure checkout path.</p>
+                </div>
+                <div class="story-row">
+                  <span>Result</span>
+                  <p>Shipped an end-to-end demo that covers browsing, cart state, and payment completion.</p>
+                </div>
+              </div>
+              <div class="project-metrics">
+                <span class="metric-tag">Stripe Checkout</span>
+                <span class="metric-tag">Next.js App</span>
+              </div>
               <div class="project-stack">
                 <span class="stack-tag">Next.js</span>
                 <span class="stack-tag">Stripe</span>
