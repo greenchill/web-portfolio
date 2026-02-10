@@ -220,3 +220,46 @@ function debounce(func, wait = 10) {
 
 // Apply debounce to heavy scroll handlers if needed
 // window.addEventListener('scroll', debounce(heavyFunction, 50));
+
+// ===== Projects Slider =====
+(function initProjectSlider() {
+  const slider = document.querySelector('.projects-slider');
+  const track = document.querySelector('.projects-track');
+  if (!slider || !track) return;
+
+  const slides = Array.from(track.querySelectorAll('.project-card'));
+  const prevBtn = document.querySelector('.projects-arrow.prev');
+  const nextBtn = document.querySelector('.projects-arrow.next');
+  const dotsContainer = document.querySelector('.projects-dots');
+  let current = 0;
+
+  // Build dots
+  dotsContainer.innerHTML = '';
+  slides.forEach((_, idx) => {
+    const dot = document.createElement('button');
+    dot.className = 'projects-dot';
+    dot.setAttribute('aria-label', `Go to project ${idx + 1}`);
+    dot.addEventListener('click', () => goTo(idx));
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = Array.from(dotsContainer.querySelectorAll('.projects-dot'));
+
+  function update() {
+    track.style.transform = `translateX(-${current * 100}%)`;
+    if (prevBtn) prevBtn.disabled = current === 0;
+    if (nextBtn) nextBtn.disabled = current === slides.length - 1;
+    dots.forEach((dot, idx) => dot.classList.toggle('active', idx === current));
+  }
+
+  function goTo(index) {
+    current = Math.max(0, Math.min(index, slides.length - 1));
+    update();
+  }
+
+  if (prevBtn) prevBtn.addEventListener('click', () => goTo(current - 1));
+  if (nextBtn) nextBtn.addEventListener('click', () => goTo(current + 1));
+
+  window.addEventListener('resize', debounce(() => update(), 100));
+  update();
+})();
