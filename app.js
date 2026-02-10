@@ -1,4 +1,4 @@
-/* ================================
+﻿/* ================================
    David Kitunov Portfolio - JavaScript
    Modern interactions and animations
    ================================ */
@@ -10,8 +10,6 @@ const navLinks = document.querySelector('.nav-links');
 const revealElements = document.querySelectorAll('.reveal');
 
 // ===== Navbar Scroll Effect =====
-let lastScroll = 0;
-
 function handleNavbarScroll() {
   const currentScroll = window.pageYOffset;
   
@@ -22,7 +20,6 @@ function handleNavbarScroll() {
     navbar.classList.remove('scrolled');
   }
   
-  lastScroll = currentScroll;
 }
 
 window.addEventListener('scroll', handleNavbarScroll, { passive: true });
@@ -193,14 +190,13 @@ document.querySelectorAll('.project-image img').forEach(img => {
 });
 
 // ===== Console Easter Egg =====
-console.log(`
-%c👋 Hey there, fellow developer!
+console.log(
+`%cHey there, fellow developer!
 
 Looking for a DevOps Engineer / Software Developer?
 Let's connect: kitunovdavid57@gmail.com
 
-%c— David Kitunov
-`, 
+%c- David Kitunov`,
 'color: #10b981; font-size: 14px; font-weight: bold;',
 'color: #06b6d4; font-size: 12px; font-style: italic;'
 );
@@ -221,99 +217,3 @@ function debounce(func, wait = 10) {
 // Apply debounce to heavy scroll handlers if needed
 // window.addEventListener('scroll', debounce(heavyFunction, 50));
 
-// ===== Projects Slider =====
-(function initProjectSlider() {
-  const slider = document.querySelector('.projects-slider');
-  const track = document.querySelector('.projects-track');
-  if (!slider || !track) return;
-
-  const slides = Array.from(track.querySelectorAll('.project-card'));
-  const prevBtn = document.querySelector('.projects-arrow.prev');
-  const nextBtn = document.querySelector('.projects-arrow.next');
-  const dotsContainer = document.querySelector('.projects-dots');
-  let currentPage = 0;
-  let itemsPerView = getItemsPerView();
-  let autoplayId = null;
-  const AUTOPLAY_DELAY = 4500;
-
-  function getItemsPerView() {
-    return window.innerWidth >= 1100 ? 2 : 1;
-  }
-
-  function pageCount() {
-    return Math.ceil(slides.length / itemsPerView);
-  }
-
-  function buildDots() {
-    dotsContainer.innerHTML = '';
-    for (let i = 0; i < pageCount(); i++) {
-      const dot = document.createElement('button');
-      dot.className = 'projects-dot';
-      dot.setAttribute('aria-label', `Go to project ${i + 1}`);
-      dot.addEventListener('click', () => goToPage(i));
-      dotsContainer.appendChild(dot);
-    }
-  }
-
-  function applyTransform() {
-    const targetIndex = currentPage * itemsPerView;
-    const targetSlide = slides[targetIndex];
-    if (!targetSlide) return;
-    const offset = targetSlide.offsetLeft;
-    track.style.transform = `translateX(-${offset}px)`;
-
-    const dots = Array.from(dotsContainer.querySelectorAll('.projects-dot'));
-    dots.forEach((dot, idx) => dot.classList.toggle('active', idx === currentPage));
-
-    if (prevBtn) prevBtn.disabled = currentPage === 0;
-    if (nextBtn) nextBtn.disabled = currentPage === pageCount() - 1;
-  }
-
-  function goToPage(page) {
-    currentPage = Math.max(0, Math.min(page, pageCount() - 1));
-    applyTransform();
-    restartAutoplay();
-  }
-
-  function nextPage() {
-    const next = currentPage + 1 >= pageCount() ? 0 : currentPage + 1;
-    goToPage(next);
-  }
-
-  function startAutoplay() {
-    stopAutoplay();
-    autoplayId = setInterval(nextPage, AUTOPLAY_DELAY);
-  }
-
-  function stopAutoplay() {
-    if (autoplayId) clearInterval(autoplayId);
-    autoplayId = null;
-  }
-
-  function restartAutoplay() {
-    stopAutoplay();
-    startAutoplay();
-  }
-
-  function handleResize() {
-    const newItems = getItemsPerView();
-    if (newItems !== itemsPerView) {
-      itemsPerView = newItems;
-      buildDots();
-      currentPage = Math.min(currentPage, pageCount() - 1);
-    }
-    applyTransform();
-  }
-
-  if (prevBtn) prevBtn.addEventListener('click', () => goToPage(currentPage - 1));
-  if (nextBtn) nextBtn.addEventListener('click', () => goToPage(currentPage + 1));
-
-  slider.addEventListener('mouseenter', stopAutoplay);
-  slider.addEventListener('mouseleave', startAutoplay);
-
-  window.addEventListener('resize', debounce(handleResize, 150));
-
-  buildDots();
-  handleResize();
-  startAutoplay();
-})();
