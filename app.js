@@ -231,35 +231,89 @@ function debounce(func, wait = 10) {
   const prevBtn = document.querySelector('.projects-arrow.prev');
   const nextBtn = document.querySelector('.projects-arrow.next');
   const dotsContainer = document.querySelector('.projects-dots');
-  let current = 0;
+  let currentPage = 0;
+  let itemsPerView = getItemsPerView();
+  let autoplayId = null;
+  const AUTOPLAY_DELAY = 4500;
 
-  // Build dots
-  dotsContainer.innerHTML = '';
-  slides.forEach((_, idx) => {
-    const dot = document.createElement('button');
-    dot.className = 'projects-dot';
-    dot.setAttribute('aria-label', `Go to project ${idx + 1}`);
-    dot.addEventListener('click', () => goTo(idx));
-    dotsContainer.appendChild(dot);
-  });
-
-  const dots = Array.from(dotsContainer.querySelectorAll('.projects-dot'));
-
-  function update() {
-    track.style.transform = `translateX(-${current * 100}%)`;
-    if (prevBtn) prevBtn.disabled = current === 0;
-    if (nextBtn) nextBtn.disabled = current === slides.length - 1;
-    dots.forEach((dot, idx) => dot.classList.toggle('active', idx === current));
+  function getItemsPerView() {
+    return window.innerWidth >= 1100 ? 2 : 1;
   }
 
-  function goTo(index) {
-    current = Math.max(0, Math.min(index, slides.length - 1));
-    update();
+  function pageCount() {
+    return Math.ceil(slides.length / itemsPerView);
   }
 
-  if (prevBtn) prevBtn.addEventListener('click', () => goTo(current - 1));
-  if (nextBtn) nextBtn.addEventListener('click', () => goTo(current + 1));
+  function buildDots() {
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < pageCount(); i++) {
+      const dot = document.createElement('button');
+      dot.className = 'projects-dot';
+      dot.setAttribute('aria-label', `Go to project ${i + 1}`);
+      dot.addEventListener('click', () => goToPage(i));
+      dotsContainer.appendChild(dot);
+    }
+  }
 
-  window.addEventListener('resize', debounce(() => update(), 100));
-  update();
+  function applyTransform() {
+    const targetIndex = currentPage * itemsPerView;
+    const targetSlide = slides[targetIndex];
+    if (!targetSlide) return;
+    const offset = targetSlide.offsetLeft;
+    track.style.transform = `translateX(-${offset}px)`;
+
+    const dots = Array.from(dotsContainer.querySelectorAll('.projects-dot'));
+    dots.forEach((dot, idx) => dot.classList.toggle('active', idx === currentPage));
+
+    if (prevBtn) prevBtn.disabled = currentPage === 0;
+    if (nextBtn) nextBtn.disabled = currentPage === pageCount() - 1;
+  }
+
+  function goToPage(page) {
+    currentPage = Math.max(0, Math.min(page, pageCount() - 1));
+    applyTransform();
+    restartAutoplay();
+  }
+
+  function nextPage() {
+    const next = currentPage + 1 >= pageCount() ? 0 : currentPage + 1;
+    goToPage(next);
+  }
+
+  function startAutoplay() {
+    stopAutoplay();
+    autoplayId = setInterval(nextPage, AUTOPLAY_DELAY);
+  }
+
+  function stopAutoplay() {
+    if (autoplayId) clearInterval(autoplayId);
+    autoplayId = null;
+  }
+
+  function restartAutoplay() {
+    stopAutoplay();
+    startAutoplay();
+  }
+
+  function handleResize() {
+    const newItems = getItemsPerView();
+    if (newItems !== itemsPerView) {
+      itemsPerView = newItems;
+      buildDots();
+      currentPage = Math.min(currentPage, pageCount() - 1);
+    }
+    applyTransform();
+  }
+
+  if (prevBtn) prevBtn.addEventListener('click', () => goToPage(currentPage - 1));
+  if (nextBtn) nextBtn.addEventListener('click', () => goToPage(currentPage + 1));
+
+  slider.addEventListener('mouseenter', stopAutoplay);
+  slider.addEventListener('mouseleave', startAutoplay);
+
+  window.addEventListener('resize', debounce(handleResize, 150));
+
+  buildDots();
+  handleResize();
+  startAutoplay();
 })();
