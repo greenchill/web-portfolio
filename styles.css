@@ -649,37 +649,9 @@ p {
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.about-image {
-  position: relative;
-}
-
-.about-image-wrapper {
-  position: relative;
-  border-radius: var(--card-radius);
-  overflow: hidden;
-  aspect-ratio: 4/5;
-  background: var(--bg-secondary);
-}
-
-.about-image-wrapper::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border: 2px solid var(--accent);
-  border-radius: var(--card-radius);
-  transform: translate(20px, 20px);
-  z-index: -1;
-}
-
-.about-image-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: start;
 }
 
 .about-image-placeholder {
