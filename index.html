@@ -60,7 +60,7 @@
       type="font/woff2"
       crossorigin
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=20261102-refined4" />
     <script src="app.js" defer></script>
   </head>
   <body>
@@ -71,9 +71,6 @@
       aria-hidden="true"
     >
       <defs>
-        <symbol id="arrow-up-right" viewBox="0 0 24 24">
-          <path d="M6 18 18 6M6 6h12v12" />
-        </symbol>
         <symbol id="download" viewBox="0 0 24 24">
           <path d="M12 3v12m-5-5 5 5 5-5M5 15v5h14v-5" />
         </symbol>
@@ -102,27 +99,25 @@
     </header>
     <main id="main" tabindex="-1">
       <section id="hero" class="hero container" aria-labelledby="hero-title">
-        <div class="hero-name-row">
-          <h1 id="hero-title">David Kitunov<span>.</span></h1>
-          <p class="hero-location">Based in Israel</p>
-        </div>
-        <p class="hero-role">
-          <span class="role-name">NOC Analyst</span
-          ><span class="role-separator" aria-hidden="true">·</span
-          ><span class="role-degree">B.Sc. Computer Science</span>
-        </p>
-        <div class="hero-intro">
-          <div>
-            <p class="hero-statement">
-              Focused on networks,<br />systems &amp; security.
+        <div class="hero-composition">
+          <div class="hero-identity">
+            <h1 id="hero-title">David<br />Kitunov<span>.</span></h1>
+            <p class="hero-role">
+              <span class="role-name">NOC Analyst</span
+              ><span class="role-separator" aria-hidden="true">·</span
+              ><span class="role-degree">B.Sc. Computer Science</span>
+            </p>
+            <p class="hero-note">
+              At Ness Digital Engineering, I monitor infrastructure, perform
+              initial troubleshooting, and coordinate incidents with technical
+              teams.
             </p>
             <div class="hero-actions">
               <a
                 class="button button-primary"
                 href="mailto:kitunovdavid57@gmail.com"
-                >Get in touch<svg class="icon" aria-hidden="true">
-                  <use href="#arrow-up-right" /></svg
-              ></a>
+                >Get in touch</a
+              >
               <a
                 class="button button-quiet"
                 href="CV.pdf"
@@ -133,22 +128,42 @@
                 ><span class="sr-only"> (PDF)</span></a
               >
             </div>
-          </div>
-          <div class="hero-note">
-            <p>
-              At Ness Digital Engineering, I monitor infrastructure, perform
-              initial troubleshooting, and coordinate incidents with technical
-              teams.
-            </p>
             <a
               class="text-link"
               href="https://www.linkedin.com/in/davidkitunov/"
               target="_blank"
               rel="noopener noreferrer"
-              >Connect on LinkedIn<svg class="icon" aria-hidden="true">
-                <use href="#arrow-up-right" /></svg
-              ><span class="sr-only"> (opens in a new tab)</span></a
+              >Connect on LinkedIn<span class="sr-only">
+                (opens in a new tab)</span
+              ></a
             >
+          </div>
+          <div class="hero-focus">
+            <p>Building my career in</p>
+            <ul aria-label="Career focus">
+              <li>
+                <a href="#networking"
+                  >Networks<span class="sr-only"
+                    >: explore my foundation</span
+                  ></a
+                >
+              </li>
+              <li>
+                <a href="#systems"
+                  >Systems<span class="sr-only"
+                    >: explore my foundation</span
+                  ></a
+                >
+              </li>
+              <li>
+                <a href="#security"
+                  >Security<span class="sr-only"
+                    >: explore my foundation</span
+                  ></a
+                >
+              </li>
+            </ul>
+            <p class="hero-location">Based in Israel</p>
           </div>
         </div>
         <dl id="about" class="credentials" aria-label="Credentials overview">
@@ -180,12 +195,9 @@
         aria-labelledby="experience-title"
       >
         <div class="container experience-layout">
-          <div class="experience-heading">
+          <div class="experience-heading section-heading heading-split">
             <h2 id="experience-title">Experience</h2>
-            <p>
-              Infrastructure operations,<br />
-              from alert to escalation.
-            </p>
+            <p>Infrastructure operations, from alert to escalation.</p>
           </div>
           <article class="experience-entry">
             <div class="position-header">
@@ -234,7 +246,7 @@
           </p>
         </div>
         <div class="foundation-ledger">
-          <article class="foundation-row">
+          <article id="networking" class="foundation-row" tabindex="-1">
             <h3>Networking</h3>
             <dl>
               <div>
@@ -249,7 +261,7 @@
               </div>
             </dl>
           </article>
-          <article class="foundation-row">
+          <article id="systems" class="foundation-row" tabindex="-1">
             <h3>Systems</h3>
             <dl>
               <div>
@@ -268,7 +280,7 @@
               </div>
             </dl>
           </article>
-          <article class="foundation-row">
+          <article id="virtualization" class="foundation-row" tabindex="-1">
             <h3>Virtualization</h3>
             <dl>
               <div>
@@ -277,7 +289,7 @@
               </div>
             </dl>
           </article>
-          <article class="foundation-row">
+          <article id="security" class="foundation-row" tabindex="-1">
             <h3>Security</h3>
             <dl>
               <div>
@@ -300,9 +312,8 @@
         aria-labelledby="education-title"
       >
         <div class="container education-layout">
-          <h2 id="education-title">
-            Education<br />
-            &amp; training
+          <h2 id="education-title" class="section-heading">
+            Education &amp; training
           </h2>
           <div class="education-records">
             <article class="education-entry">
@@ -345,14 +356,19 @@
         <div class="projects-grid">
           <article class="project">
             <div class="project-media">
-              <img
-                src="public/smart-crosswalk.jpg"
-                width="1425"
-                height="891"
-                loading="lazy"
-                decoding="async"
-                alt="Smart Crosswalk team prototype: crossing overview and maps"
-              />
+              <div class="project-image-window">
+                <img
+                  src="public/smart-crosswalk.jpg"
+                  width="1425"
+                  height="891"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Smart Crosswalk team prototype: crossing overview and maps"
+                />
+              </div>
+              <p class="project-media-caption">
+                React frontend · Team prototype
+              </p>
             </div>
             <div class="project-body">
               <div class="project-title">
@@ -378,30 +394,33 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="View demo: Smart Crosswalk (opens in a new tab)"
-                  >View demo<svg class="icon" aria-hidden="true">
-                    <use href="#arrow-up-right" /></svg></a
+                  >View demo</a
                 ><a
                   class="text-link"
                   href="https://github.com/liorma6/AI-Smart-Crosswalk-Project"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Team repository: Smart Crosswalk (opens in a new tab)"
-                  >Team repository<svg class="icon" aria-hidden="true">
-                    <use href="#arrow-up-right" /></svg
-                ></a>
+                  >Team repository</a
+                >
               </div>
             </div>
           </article>
           <article class="project">
             <div class="project-media">
-              <img
-                src="public/signlang-report.jpg"
-                width="1000"
-                height="559"
-                loading="lazy"
-                decoding="async"
-                alt="Cover of the ASL alphabet recognition project report, showing hand landmarks"
-              />
+              <div class="project-image-window">
+                <img
+                  src="public/signlang-report.jpg"
+                  width="1000"
+                  height="559"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Cover of the ASL alphabet recognition project report, showing hand landmarks"
+                />
+              </div>
+              <p class="project-media-caption">
+                Hand landmarks · Course report
+              </p>
             </div>
             <div class="project-body">
               <div class="project-title">
@@ -425,30 +444,33 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="View repository: SignLangModel (opens in a new tab)"
-                  >View repository<svg class="icon" aria-hidden="true">
-                    <use href="#arrow-up-right" /></svg></a
+                  >View repository</a
                 ><a
                   class="text-link"
                   href="https://github.com/greenchill/signlangmodel/blob/main/ASL_Recognition_Via_Landmark_Deep_Learning.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Project report: SignLangModel (opens in a new tab)"
-                  >Project report<svg class="icon" aria-hidden="true">
-                    <use href="#arrow-up-right" /></svg
-                ></a>
+                  >Project report</a
+                >
               </div>
             </div>
           </article>
           <article class="project">
             <div class="project-media">
-              <img
-                src="public/brogram.webp"
-                width="810"
-                height="488"
-                loading="lazy"
-                decoding="async"
-                alt="Brogram workout planner welcome screen"
-              />
+              <div class="project-image-window">
+                <img
+                  src="public/brogram.webp"
+                  width="810"
+                  height="488"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Brogram workout planner welcome screen"
+                />
+              </div>
+              <p class="project-media-caption">
+                Workout planner · Learning project
+              </p>
             </div>
             <div class="project-body">
               <div class="project-title">
@@ -469,30 +491,31 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="View demo: Brogram (opens in a new tab)"
-                  >View demo<svg class="icon" aria-hidden="true">
-                    <use href="#arrow-up-right" /></svg></a
+                  >View demo</a
                 ><a
                   class="text-link"
                   href="https://github.com/greenchill/brogram"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Source code: Brogram (opens in a new tab)"
-                  >Source code<svg class="icon" aria-hidden="true">
-                    <use href="#arrow-up-right" /></svg
-                ></a>
+                  >Source code</a
+                >
               </div>
             </div>
           </article>
           <article class="project">
             <div class="project-media">
-              <img
-                src="public/stripe-store.webp"
-                width="960"
-                height="417"
-                loading="lazy"
-                decoding="async"
-                alt="Stripe Store demo storefront with sticker products"
-              />
+              <div class="project-image-window">
+                <img
+                  src="public/stripe-store.webp"
+                  width="960"
+                  height="417"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Stripe Store demo storefront with sticker products"
+                />
+              </div>
+              <p class="project-media-caption">Storefront · Learning project</p>
             </div>
             <div class="project-body">
               <div class="project-title">
@@ -514,17 +537,15 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="View demo: Stripe Store (opens in a new tab)"
-                  >View demo<svg class="icon" aria-hidden="true">
-                    <use href="#arrow-up-right" /></svg></a
+                  >View demo</a
                 ><a
                   class="text-link"
                   href="https://github.com/greenchill/demostore"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Source code: Stripe Store (opens in a new tab)"
-                  >Source code<svg class="icon" aria-hidden="true">
-                    <use href="#arrow-up-right" /></svg
-                ></a>
+                  >Source code</a
+                >
               </div>
             </div>
           </article>
@@ -543,9 +564,8 @@
               security? I’d be glad to hear about it.
             </p>
             <a class="contact-email" href="mailto:kitunovdavid57@gmail.com"
-              >kitunovdavid57@gmail.com<svg class="icon" aria-hidden="true">
-                <use href="#arrow-up-right" /></svg
-            ></a>
+              >kitunovdavid57@gmail.com</a
+            >
             <div class="contact-links">
               <a
                 class="text-link"

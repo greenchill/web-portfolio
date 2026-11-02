@@ -18,19 +18,19 @@ colors:
 typography:
   display:
     fontFamily: "Space Grotesk, sans-serif"
-    fontSize: "clamp(3.25rem, 7.6vw, 6rem)"
+    fontSize: "clamp(4rem, 7.2vw, 6rem)"
     fontWeight: 500
-    lineHeight: 1.1
+    lineHeight: 0.98
     letterSpacing: "-0.04em"
   display-mobile:
     fontFamily: "Space Grotesk, sans-serif"
-    fontSize: "clamp(3.25rem, 12vw, 4.5rem)"
+    fontSize: "clamp(3.5rem, 15vw, 4.5rem)"
     fontWeight: 500
     lineHeight: 0.98
     letterSpacing: "-0.04em"
   headline:
     fontFamily: "Space Grotesk, sans-serif"
-    fontSize: "clamp(2.25rem, 4vw, 3.5rem)"
+    fontSize: "clamp(2rem, 3.4vw, 3rem)"
     fontWeight: 500
     lineHeight: 1.1
     letterSpacing: "-0.04em"
@@ -40,12 +40,17 @@ typography:
     fontWeight: 500
     lineHeight: 1.2
     letterSpacing: "-0.04em"
-  statement:
+  career-focus:
     fontFamily: "Space Grotesk, sans-serif"
-    fontSize: "clamp(1.75rem, 3.5vw, 3rem)"
+    fontSize: "clamp(2.5rem, 4.6vw, 4rem)"
     fontWeight: 500
-    lineHeight: 1.17
-    letterSpacing: "-0.03em"
+    lineHeight: 1.15
+    letterSpacing: "-0.04em"
+  position:
+    fontFamily: "Space Grotesk, sans-serif"
+    fontSize: "clamp(2rem, 3vw, 2.75rem)"
+    fontWeight: 500
+    lineHeight: 1.2
   body:
     fontFamily: "IBM Plex Sans, sans-serif"
     fontSize: "1rem"
@@ -105,14 +110,14 @@ components:
   project-card:
     textColor: "{colors.ink}"
     rounded: "{rounded.card}"
-    padding: "28px"
+    padding: "24px"
   credentials:
     textColor: "{colors.ink}"
     typography: "{typography.label}"
-    padding: "28px 0"
+    padding: "24px 0"
   foundation-row:
     textColor: "{colors.ink}"
-    padding: "32px 0"
+    padding: "24px 0 0"
 ---
 
 # Design System: David Kitunov
@@ -145,7 +150,7 @@ The palette pairs warm paper neutrals with a cool navy foundation and one blue a
 
 - **Restrained Blue** (`accent`): primary actions, text links, active navigation and evidence-category labels.
 - **Focus Blue** (`focus`): the keyboard focus outline; a semantic alias of the accent.
-- **Soft Blue** (`accent-soft`): selected text background.
+- **Soft Blue** (`accent-soft`): shared project-cover mat and selected text background.
 
 ### Neutral
 
@@ -158,7 +163,7 @@ The palette pairs warm paper neutrals with a cool navy foundation and one blue a
 - **Action Paper** (`accent-ink`): primary-action text, preserving a separate semantic role despite matching paper.
 - **Inverse Slate** (`inverse-muted`): secondary text on the navy surface.
 - **Inverse Rule** (`inverse-rule`): separators inside the navy surface.
-- **Image Black** (`image-black`): the dark image surround used by the workout-planner screenshot.
+- **Image Black** (`image-black`): retained legacy image token; the current covers share the soft-blue mat.
 
 **The One Accent Rule.** Use blue for actions, focus, active navigation and selected factual labels. Keep body copy and large page fields in the paper-and-navy family.
 
@@ -172,10 +177,10 @@ Both faces are locally hosted variable WOFF2 files with `font-display: swap`. Di
 
 ### Hierarchy
 
-- **Display:** the name masthead uses `typography.display`; at the mobile breakpoint it uses `display-mobile` and a maximum width of 9ch.
+- **Display:** the two-line name uses `typography.display`; at the mobile breakpoint it uses `display-mobile`.
 - **Headline:** section headings use `typography.headline`. The mobile contact heading uses its own observed clamp (2.25rem, 9vw, 3rem).
 - **Title:** project and education headings use `typography.title`. Ledger headings and the current-position title have contextual size overrides rather than a new general scale.
-- **Statement:** the short introductory statement uses `typography.statement`; its mobile size is `clamp(1.625rem, 7.4vw, 2.5rem)`.
+- **Career focus:** three prominent blue links use `typography.career-focus`. On mobile they become a compact three-column list; at larger text sizes they stack automatically.
 - **Body:** standard text uses `typography.body`. Unclassed paragraphs are capped at 65ch; supporting hero and contact copy have narrower contextual measures.
 - **Lead:** longer introductory and inverse-section support text uses `typography.lead`; mobile hero and contact supporting copy return to body size.
 - **Label:** navigation, dates, category descriptions and technology lists use `typography.label`. Category labels use medium weight; they remain sentence case.
@@ -186,19 +191,13 @@ Headings balance their wrapping and allow long words to break. Paragraphs use pr
 
 ## Layout
 
-The centered container has a maximum width of 1376px, including its horizontal padding. Default gutters are 64px and column gaps are 32px. The principal section rhythm is 112px of vertical padding. Compact spacing follows the frontmatter's observed 4px-based steps.
+The centered container has a maximum width of 1376px including padding. Desktop gutters are 64px and ordinary column gaps are 32px. Section padding is 72px above 1000px, 64px from 641–1000px, and 48px on mobile. Gutters reduce to 32px and then 20px.
 
-The layout combines two-column introductions, approximately one-to-two heading/content divisions, a three-column credentials record and a two-column project grid. These are content relationships rather than a universal twelve-column grid. The project grid stretches desktop rows to equal height, while each card's technology list and links settle toward the bottom.
+The hero pairs a two-line name and direct contact actions with three large career-focus links. The links navigate to real networking, systems and security records; they are career interests, not claimed job titles. The blue full stop echoes the existing wordmark. On mobile role and degree use separate lines, the actions share a row, and the focus links sit below them.
 
-Responsive changes are inclusive maximum-width queries:
+Experience uses a full-width role record and three parallel responsibility columns. Technical foundations form a two-by-two open grid; each item keeps its experience/training/familiarity labels. Education uses two parallel records. These sections stack at 640px. At tablet widths the foundation evidence categories already stack within each column.
 
-| Viewport | Container and rhythm | Composition |
-| --- | --- | --- |
-| Above 1000px | 64px gutters, 32px column gaps, 112px section padding | Open asymmetric columns; 88px minimum header height. |
-| 641–1000px | 32px gutters, 32px column gaps, 88px section padding | Tighter ratios; dates move below the position heading; responsibility rows stack internally; projects remain two columns. |
-| 640px and below | 20px gutters, 20px column gaps, 64px section padding | Main content grids become one column; project rows use natural height; 72px minimum header height. |
-
-On mobile the role and degree occupy separate lines. Hero actions share the row, and the credentials record becomes three ruled rows with label/value columns. Section heading/support pairs stack. Project media heights remain equal across all cards at each viewport: 280px by default, 240px at the middle breakpoint and 210px on mobile. Card-body padding changes from 28px to 24px, then to 24px vertically and 20px horizontally.
+Projects use a two-column grid on desktop and one column on mobile. Cards stretch equally within each desktop row, while different rows size naturally to their content. This avoids empty learning-project bodies. Every media panel is 380px on desktop, 240px at tablet and 220px on mobile. All four use the same soft-blue mat, inset image window and caption. All source images use `object-fit: cover` with top-centered crops in a taller window so actual project material remains prominent. Card bodies use 24px padding, reducing to 20px at tablet/mobile.
 
 The sticky header is accounted for by document scroll padding: 112px by default and 88px on mobile. Main navigation changes at the same 640px boundary used by the script.
 
@@ -212,7 +211,7 @@ The system is flat. There are no box shadows, text shadows, blur layers or eleva
 
 Project frames use the `card` radius and clip their image/content edges. Buttons use the smaller `button` radius. Editorial rows, section backgrounds and navigation remain square and open. Borders are thin (1px); the keyboard focus outline is deliberately stronger (3px, offset 4px).
 
-Arrow and download marks are stroke SVGs, normally 20px square with a 1.6 stroke width. Project links use 16px icons. The mobile menu mark is formed by two CSS border lines, not a font glyph.
+Download marks are 20px stroke SVGs with a 1.6 stroke width. Text links carry no repeated arrow suffixes. The mobile menu mark is formed by two CSS border lines, not a font glyph.
 
 ## Components
 
@@ -230,11 +229,11 @@ Compact, plainly labeled actions pair medium-weight body text with a restrained 
 
 ### Text links
 
-Blue text and a stroke arrow create lightweight navigation. Standard text links have a 44px minimum target height; their underline becomes visible on hover. Project links use label-sized text and smaller icons. The contact email is a larger Space Grotesk link, with a rule-colored underline at rest that becomes blue on hover. Long email text may wrap anywhere.
+Blue text creates lightweight navigation. Standard text links have a 44px minimum target height; their underline becomes visible on hover. Project links use label-sized text and smaller icons. The contact email is a larger Space Grotesk link, with a rule-colored underline at rest that becomes blue on hover. Long email text may wrap anywhere.
 
 ### Cards / Containers
 
-Project cards are consistent frames rather than floating tiles. Each has a fine border, the card radius, clipped overflow, a fixed-height media region and a flex column body. All four use the same structure and responsive media heights. Screenshots normally fill the media frame from the top; the report cover and workout screen use containment to preserve their content. The report uses the paper surround; the workout image uses image black.
+Project cards are consistent frames rather than floating tiles. Each has a fine border, the card radius, clipped overflow, a fixed-height media region and a flex column body. All four use the same structure and responsive media heights. Every screenshot/report uses the same paper image window and soft-blue mat, with consistent top-centered cropping. Captions name the depicted artifact and its project context; original asset pixels are unchanged.
 
 Descriptions, plain technology lists and a ruled link row follow the title and contextual description. Technology names are unboxed text, not interactive chips. Cards have no whole-card hover or click state; their actual links provide interaction.
 
@@ -248,7 +247,7 @@ At 640px and below, enhanced navigation exposes a Menu/Close button and a wrappi
 
 The credentials record uses quiet labels, medium-weight facts and secondary metadata. A fine top rule groups the three desktop columns; mobile rows add their own bottom rules.
 
-Technical-foundation rows use an open heading/content split with a top rule and two factual categories. Their category names use blue medium-weight body text to distinguish the origin of evidence. On mobile both the outer row and the inner categories stack. Responsibility and education records use the same discipline of clear hierarchy and rules, with inverse colors where the surrounding surface is navy.
+Technical-foundation items use a two-by-two open grid, each with a top rule, heading and factual categories. Their category names use blue medium-weight body text to distinguish the origin of evidence. On mobile both the outer row and the inner categories stack. Responsibility and education records use the same discipline of clear hierarchy and rules, with inverse colors where the surrounding surface is navy.
 
 ### Shared access and motion behavior
 
