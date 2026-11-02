@@ -33,6 +33,8 @@ Smart Crosswalk is a HIT team graduation prototype. David's Frontend Developer r
 
 `CV.pdf` is the updated PDF supplied by David on November 2, 2026, published unchanged after checking its current role, degree, average, and training against the portfolio. Download links appear in the hero and contact section. The previous PDF remains in Git history. Replace this file when David supplies an updated version, and check that the page and CV remain consistent.
 
+Latest replacement: the supplied `David Kitunov - Networking Systems Security CV (3).pdf`, preserved byte-for-byte as `CV.pdf`. SHA-256: `8c0a6d9556f6ff3bdb1beaa110f8b36c08839571e801aee99420fbc8562fbb8f`.
+
 ## Deployment and rollback
 
 Netlify is connected to production branch `main`. Publish the repository root without a build command; retain the existing connection and domain.
