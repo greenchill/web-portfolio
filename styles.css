@@ -313,6 +313,9 @@ h1 {
 .text-link:hover .icon {
   transform: translate(2px, -2px);
 }
+.cv-link:hover .icon {
+  transform: translateY(2px);
+}
 .hero-art {
   position: relative;
   margin: 38px 0 0 8px;
@@ -813,6 +816,7 @@ h2 {
 }
 .contact-social {
   display: flex;
+  flex-wrap: wrap;
   gap: 30px;
   font-size: 13px;
   margin-top: 20px;
@@ -1614,6 +1618,13 @@ the unenhanced navigation remains visible when JavaScript is absent. */
   .hero-actions > .text-link {
     border: 1px solid #aab5c4;
     border-radius: 3px;
+  }
+  .hero-actions > .cv-link {
+    grid-column: 1 / -1;
+    justify-self: start;
+    min-height: 44px;
+    padding: 4px 0;
+    border: 0;
   }
   .credential {
     padding: 16px 0 !important;
