@@ -17,9 +17,11 @@ Content and navigation work without JavaScript. Fonts are self-hosted with `font
 
 ## Design system
 
-The whole page follows [Editorial Tech from MengTo/Skills](https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/editorial-tech/SKILL.md), with [Hallmark](https://github.com/Nutlope/hallmark) structure and preservation checks and [Impeccable](https://github.com/pbakaus/impeccable) responsive, typographic and review guidance. A large name masthead opens the page, professional experience occupies a navy passage, technical foundations form an open ledger, education uses a split record, and projects share one card system. The approved off-white/navy/blue identity remains. See `DESIGN.md` for the implemented visual rules and `PRODUCT.md` for factual constraints.
+The whole page follows [Editorial Tech from MengTo/Skills](https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/editorial-tech/SKILL.md), with [Hallmark](https://github.com/Nutlope/hallmark) structure and preservation checks and [Impeccable](https://github.com/pbakaus/impeccable) responsive, typographic and review guidance. A two-line name and large career-focus links open the page. Professional experience occupies a compact navy passage, technical foundations use a two-by-two open grid, education uses two parallel records, and projects share one card system. The approved off-white/navy/blue identity remains. See `DESIGN.md` for the implemented visual rules and `PRODUCT.md` for factual constraints.
 
-All four projects use the same `.project` component inside `.projects-grid`. Image panels are 280px on desktop, 240px at widths up to 1000px, and 210px up to 640px. Desktop grid rows give all four cards equal height; mobile card bodies size naturally to their content. Technology rows and links sit at the bottom. Keep learning-project labels explicit. Brogram and the SignLangModel report cover use `contain`; the other captures use `cover`. Asset pixels are preserved; origin metadata or sidecars document provenance.
+All four projects use the same `.project` component inside `.projects-grid`. Media panels are 380px on desktop, 240px at widths up to 1000px, and 220px up to 640px. Each uses a soft-blue mat, inset image window and short caption. All source images use consistent top-centered `cover` crops in a taller window; their original pixels remain unchanged. Cards align within each desktop row while rows and mobile cards size naturally to their content. Technology lists and links align at the bottom of each pair. Keep the learning-project labels explicit.
+
+Section spacing is 72/64/48px across the desktop/tablet/mobile breakpoints. Career-focus links collapse automatically at enlarged text sizes. Versioned CSS URLs ensure an already-open browser receives the current styles after deployment.
 
 ## Content rules
 
@@ -43,10 +45,14 @@ Netlify is connected to production branch `main`. Publish the repository root wi
 
 Before publishing: review at 360, 768, and 1440 px; check keyboard navigation, reduced motion, contrast, anchors/assets, contact actions, project links, and console errors. Run `node --check app.js`.
 
-Previous production revision for this complete style rebuild: `1bb997a4720a37827315ecd3c3d215e969599d65`, retained as `rollback/pre-complete-redesign-2026-11-02`. The original pre-portfolio revision is also retained as `rollback/pre-portfolio-rebuild-2026-11-02`. Roll back by reverting the relevant merge on `main`, preserving later unrelated changes, or restore the previous deploy in Netlify. Do not force-push production history.
+Previous production revision for the earlier complete style rebuild: `1bb997a4720a37827315ecd3c3d215e969599d65`, retained as `rollback/pre-complete-redesign-2026-11-02`. The original pre-portfolio revision is also retained as `rollback/pre-portfolio-rebuild-2026-11-02`. Roll back by reverting the relevant merge on `main`, preserving later unrelated changes, or restore the previous deploy in Netlify. Do not force-push production history.
 
 The final redesign was checked at 360, 390, 768, 1280, 1440 and 1920px without horizontal overflow. Hallmark static lint passed and retained all 19 destinations and four script hooks. CUA browser inspection replaces Hallmark's separate browser renderer in this environment. Axe reported no violations on the audited tablet and mobile views. Keyboard skip, menu Escape and focus transfer, JavaScript-free content/navigation, reduced-motion rules and 200% text reflow were checked. LinkedIn rejects automated link requests with HTTP 999; its existing URL is retained. Other external project/source links returned HTTP 200.
 
 ## Assets
 
 Space Grotesk and IBM Plex Sans use the SIL Open Font License; see `public/fonts/`. Brogram and Stripe Store thumbnails are existing optimized project images. `smart-crosswalk.jpg` is a CUA capture of the public demo, and `signlang-report.jpg` is page 1 of the linked project report, rendered with Poppler. Social preview and favicons retain the existing matching brand and factual positioning. No stock portraits or AI-generated project interfaces are used.
+
+## Compact editorial refinement
+
+The November 2 refinement retains all 19 prior destinations, the current CV bytes and all factual content. The previous production revision is `54c6802edf030a90d30beb9dbefaaaaff45adaf4`, retained in the merge history and rollback tag. Desktop page height at 1440px decreased from 5258px to 4570px; mobile at 360px decreased from 7484px to 7043px. These are layout measurements, not portfolio achievement claims.

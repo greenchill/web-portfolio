@@ -128,14 +128,14 @@ button {
 @media (max-width: 1000px) {
   :root {
     --gutter: 32px;
-    --section-gap: 88px;
+    --section-gap: 64px;
   }
 }
 @media (max-width: 640px) {
   :root {
     --gutter: 20px;
     --gap-columns: 20px;
-    --section-gap: 64px;
+    --section-gap: 48px;
   }
   html {
     scroll-padding-top: 88px;
