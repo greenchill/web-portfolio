@@ -21,9 +21,9 @@ HIT B.Sc. Computer Science: completed October 2026; overall average 90.56/100. I
 
 Smart Crosswalk is an academic team prototype. SignLangModel is a machine-learning course project. Brogram and Stripe Store are learning projects. Project technologies are not claims of professional experience.
 
-## CV status — replacement required
+## Current CV
 
-**The existing `CV.pdf` is outdated and deliberately not linked on the page.** It still describes student/software-engineering positioning, an expected graduation, and an average of 87/100. It is preserved unchanged at the user's request. The user will provide an updated CV later. Restore a download button only after checking the replacement against the facts above.
+`CV.pdf` is the updated PDF supplied by David on November 2, 2026, published unchanged after checking its current role, degree, average, and training against the portfolio. Download links appear in the hero and contact section. The previous PDF remains in Git history. Replace this file when David supplies an updated version, and check that the page and CV remain consistent.
 
 ## Deployment and rollback
 
