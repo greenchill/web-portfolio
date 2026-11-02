@@ -611,6 +611,7 @@ h2 {
 }
 .project-visual {
   height: 265px;
+  flex-shrink: 0;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -679,13 +680,18 @@ h2 {
   margin-bottom: 13px;
   line-height: 1.2;
 }
-.project-body > p:not(.eyebrow) {
+.project-body > p:not(.eyebrow),
+.project-description {
   font-size: 15px;
   color: var(--muted);
 }
+.project-description p + p {
+  margin-top: 8px;
+}
 .project-body .project-tech {
   font-size: 11px !important;
-  margin-top: 20px;
+  margin-top: auto;
+  padding-top: 20px;
   line-height: 1.8;
 }
 .project-links {
@@ -693,7 +699,7 @@ h2 {
   align-items: center;
   flex-wrap: wrap;
   gap: 7px 22px;
-  margin-top: auto;
+  margin-top: 0;
   padding-top: 22px;
 }
 .project-links .text-link {
@@ -734,6 +740,11 @@ h2 {
   border-radius: 3px;
   margin-top: 3px;
 }
+.learning-project > div {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
 .learning-project .eyebrow {
   font-size: 9px;
   letter-spacing: 0.5px;
@@ -754,7 +765,8 @@ h2 {
 .compact-links {
   display: flex;
   gap: 24px;
-  margin-top: 8px;
+  margin-top: auto;
+  padding-top: 8px;
   font-size: 12px;
   color: var(--blue);
 }
@@ -1080,7 +1092,8 @@ h2 {
   .project h3 {
     font-size: 25px;
   }
-  .project-body > p:not(.eyebrow) {
+  .project-body > p:not(.eyebrow),
+  .project-description {
     font-size: 14px;
   }
   .project-links {
@@ -1440,7 +1453,8 @@ the unenhanced navigation remains visible when JavaScript is absent. */
   .project h3 {
     font-size: 28px;
   }
-  .project-body > p:not(.eyebrow) {
+  .project-body > p:not(.eyebrow),
+  .project-description {
     font-size: 15px;
   }
   .project-links {
@@ -1705,6 +1719,28 @@ the unenhanced navigation remains visible when JavaScript is absent. */
   }
   .contact-section h2 {
     font-size: 36px;
+  }
+}
+/* Share content rows between adjacent cards, even when their copy wraps. */
+@supports (grid-template-rows: subgrid) {
+  @media (min-width: 641px) {
+    .featured-projects {
+      row-gap: 0;
+    }
+    .project {
+      display: grid;
+      grid-row: span 6;
+      grid-template-rows: subgrid;
+    }
+    .project-body {
+      display: grid;
+      grid-row: span 5;
+      grid-template-rows: subgrid;
+      row-gap: 0;
+    }
+    .project-body .project-tech {
+      margin-top: 0;
+    }
   }
 }
 @media (prefers-reduced-motion: reduce) {
