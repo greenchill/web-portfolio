@@ -1,0 +1,352 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-02T19:38:56.222Z",
+  "title": "Design System: David Kitunov",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Warm Paper",
+        "tonalRamp": [
+          "oklch(15% 0.0026 88.64)",
+          "oklch(26% 0.0045 88.64)",
+          "oklch(38% 0.0066 88.64)",
+          "oklch(49% 0.0070 88.64)",
+          "oklch(61% 0.0070 88.64)",
+          "oklch(72% 0.0070 88.64)",
+          "oklch(84% 0.0045 88.64)",
+          "oklch(95% 0.0014 88.64)"
+        ]
+      },
+      "paper-2": {
+        "role": "neutral",
+        "displayName": "Soft Paper",
+        "tonalRamp": [
+          "oklch(15% 0.0036 93.57)",
+          "oklch(26% 0.0062 93.57)",
+          "oklch(38% 0.0091 93.57)",
+          "oklch(49% 0.0096 93.57)",
+          "oklch(61% 0.0096 93.57)",
+          "oklch(72% 0.0096 93.57)",
+          "oklch(84% 0.0061 93.57)",
+          "oklch(95% 0.0019 93.57)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Deep Navy",
+        "tonalRamp": [
+          "oklch(15% 0.0156 256.34)",
+          "oklch(26% 0.0271 256.34)",
+          "oklch(38% 0.0396 256.34)",
+          "oklch(49% 0.0417 256.34)",
+          "oklch(61% 0.0417 256.34)",
+          "oklch(72% 0.0417 256.34)",
+          "oklch(84% 0.0267 256.34)",
+          "oklch(95% 0.0083 256.34)"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Slate Text",
+        "tonalRamp": [
+          "oklch(15% 0.0145 254.22)",
+          "oklch(26% 0.0251 254.22)",
+          "oklch(38% 0.0367 254.22)",
+          "oklch(49% 0.0386 254.22)",
+          "oklch(61% 0.0386 254.22)",
+          "oklch(72% 0.0386 254.22)",
+          "oklch(84% 0.0247 254.22)",
+          "oklch(95% 0.0077 254.22)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted Slate",
+        "tonalRamp": [
+          "oklch(15% 0.0139 255.70)",
+          "oklch(26% 0.0241 255.70)",
+          "oklch(38% 0.0353 255.70)",
+          "oklch(49% 0.0371 255.70)",
+          "oklch(61% 0.0371 255.70)",
+          "oklch(72% 0.0371 255.70)",
+          "oklch(84% 0.0238 255.70)",
+          "oklch(95% 0.0074 255.70)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Fine Rule",
+        "tonalRamp": [
+          "oklch(15% 0.0027 247.91)",
+          "oklch(26% 0.0046 247.91)",
+          "oklch(38% 0.0067 247.91)",
+          "oklch(49% 0.0071 247.91)",
+          "oklch(61% 0.0071 247.91)",
+          "oklch(72% 0.0071 247.91)",
+          "oklch(84% 0.0045 247.91)",
+          "oklch(95% 0.0014 247.91)"
+        ]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Restrained Blue",
+        "tonalRamp": [
+          "oklch(15% 0.0744 266.36)",
+          "oklch(26% 0.1290 266.36)",
+          "oklch(38% 0.1885 266.36)",
+          "oklch(49% 0.1984 266.36)",
+          "oklch(61% 0.1984 266.36)",
+          "oklch(72% 0.1984 266.36)",
+          "oklch(84% 0.1270 266.36)",
+          "oklch(95% 0.0397 266.36)"
+        ]
+      },
+      "accent-ink": {
+        "role": "neutral",
+        "displayName": "Action Paper",
+        "tonalRamp": [
+          "oklch(15% 0.0026 88.64)",
+          "oklch(26% 0.0045 88.64)",
+          "oklch(38% 0.0066 88.64)",
+          "oklch(49% 0.0070 88.64)",
+          "oklch(61% 0.0070 88.64)",
+          "oklch(72% 0.0070 88.64)",
+          "oklch(84% 0.0045 88.64)",
+          "oklch(95% 0.0014 88.64)"
+        ]
+      },
+      "focus": {
+        "role": "primary",
+        "displayName": "Focus Blue",
+        "tonalRamp": [
+          "oklch(15% 0.0744 266.36)",
+          "oklch(26% 0.1290 266.36)",
+          "oklch(38% 0.1885 266.36)",
+          "oklch(49% 0.1984 266.36)",
+          "oklch(61% 0.1984 266.36)",
+          "oklch(72% 0.1984 266.36)",
+          "oklch(84% 0.1270 266.36)",
+          "oklch(95% 0.0397 266.36)"
+        ]
+      },
+      "inverse-muted": {
+        "role": "neutral",
+        "displayName": "Inverse Slate",
+        "tonalRamp": [
+          "oklch(15% 0.0102 257.04)",
+          "oklch(26% 0.0177 257.04)",
+          "oklch(38% 0.0259 257.04)",
+          "oklch(49% 0.0273 257.04)",
+          "oklch(61% 0.0273 257.04)",
+          "oklch(72% 0.0273 257.04)",
+          "oklch(84% 0.0174 257.04)",
+          "oklch(95% 0.0055 257.04)"
+        ]
+      },
+      "inverse-rule": {
+        "role": "neutral",
+        "displayName": "Inverse Rule",
+        "tonalRamp": [
+          "oklch(15% 0.0138 256.14)",
+          "oklch(26% 0.0240 256.14)",
+          "oklch(38% 0.0350 256.14)",
+          "oklch(49% 0.0368 256.14)",
+          "oklch(61% 0.0368 256.14)",
+          "oklch(72% 0.0368 256.14)",
+          "oklch(84% 0.0236 256.14)",
+          "oklch(95% 0.0074 256.14)"
+        ]
+      },
+      "accent-soft": {
+        "role": "primary",
+        "displayName": "Soft Blue",
+        "tonalRamp": [
+          "oklch(15% 0.0079 271.19)",
+          "oklch(26% 0.0136 271.19)",
+          "oklch(38% 0.0199 271.19)",
+          "oklch(49% 0.0210 271.19)",
+          "oklch(61% 0.0210 271.19)",
+          "oklch(72% 0.0210 271.19)",
+          "oklch(84% 0.0134 271.19)",
+          "oklch(95% 0.0042 271.19)"
+        ]
+      },
+      "image-black": {
+        "role": "neutral",
+        "displayName": "Image Black",
+        "tonalRamp": [
+          "oklch(15% 0.0028 256.88)",
+          "oklch(26% 0.0049 256.88)",
+          "oklch(38% 0.0071 256.88)",
+          "oklch(49% 0.0075 256.88)",
+          "oklch(61% 0.0075 256.88)",
+          "oklch(72% 0.0075 256.88)",
+          "oklch(84% 0.0048 256.88)",
+          "oklch(95% 0.0015 256.88)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Large name masthead."
+      },
+      "display-mobile": {
+        "displayName": "Mobile Display",
+        "purpose": "Name masthead at 640px and below."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section headings."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Project and education headings."
+      },
+      "statement": {
+        "displayName": "Statement",
+        "purpose": "Short introductory statement."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Readable standard prose and ordinary links."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Larger supporting and introductory copy."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Dates, navigation and secondary factual metadata."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "dur-short",
+        "value": "180ms",
+        "purpose": "Color, text-decoration and navigation underline transitions."
+      },
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Shared interaction easing."
+      },
+      {
+        "name": "reduced-duration",
+        "value": "0.01ms",
+        "purpose": "Animation and transition duration under prefers-reduced-motion: reduce; animation iteration count is one and scrolling is automatic."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact-desktop",
+        "value": "1000px"
+      },
+      {
+        "name": "mobile",
+        "value": "640px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Email action with a blue fill and navy hover.",
+      "html": "<a class=\"ds-button-primary\" href=\"mailto:kitunovdavid57@gmail.com\">Get in touch<svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M6 18 18 6M6 6h12v12\"/></svg></a>",
+      "css": ".ds-button-primary { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-md, 16px); min-height: 48px; padding: var(--space-xs, 8px) var(--space-20, 20px); border: 1px solid var(--color-accent, #3157d5); border-radius: 4px; font: 500 1rem/1.6 var(--font-body, \"IBM Plex Sans\", sans-serif); color: var(--color-accent-ink, #f5f3ee); background: var(--color-accent, #3157d5); text-decoration: none; transition: background-color var(--dur-short, 180ms) var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1)), color var(--dur-short, 180ms) var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1)); } .ds-button-primary:hover { background: var(--color-ink, #111f32); border-color: var(--color-ink, #111f32); } .ds-button-primary:active { transform: translateY(1px); } .ds-button-primary:focus-visible { outline: 3px solid var(--color-focus, #3157d5); outline-offset: 4px; } .ds-icon { display: block; flex: 0 0 auto; width: 20px; height: 20px; stroke: currentColor; stroke-width: 1.6; fill: none; } @media (prefers-reduced-motion: reduce) { .ds-button-primary { transition-duration: 0.01ms !important; } }"
+    },
+    {
+      "name": "Quiet Button",
+      "kind": "button",
+      "refersTo": "button-quiet",
+      "description": "Outlined companion action for the CV download.",
+      "html": "<a class=\"ds-button-quiet\" href=\"CV.pdf\" download=\"David-Kitunov-CV.pdf\" type=\"application/pdf\">Download CV<svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3v12m-5-5 5 5 5-5M5 15v5h14v-5\"/></svg></a>",
+      "css": ".ds-button-quiet { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-md, 16px); min-height: 48px; padding: var(--space-xs, 8px) var(--space-20, 20px); border: 1px solid var(--color-ink, #111f32); border-radius: 4px; font: 500 1rem/1.6 var(--font-body, \"IBM Plex Sans\", sans-serif); color: var(--color-ink, #111f32); background: transparent; text-decoration: none; transition: background-color var(--dur-short, 180ms) var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1)), color var(--dur-short, 180ms) var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1)); } .ds-button-quiet:hover { background: var(--color-paper-2, #eceae3);  } .ds-button-quiet:active { transform: translateY(1px); } .ds-button-quiet:focus-visible { outline: 3px solid var(--color-focus, #3157d5); outline-offset: 4px; } .ds-icon { display: block; flex: 0 0 auto; width: 20px; height: 20px; stroke: currentColor; stroke-width: 1.6; fill: none; } @media (prefers-reduced-motion: reduce) { .ds-button-quiet { transition-duration: 0.01ms !important; } }"
+    },
+    {
+      "name": "Text Link",
+      "kind": "custom",
+      "refersTo": "text-link",
+      "description": "A lightweight link whose underline appears on hover.",
+      "html": "<a class=\"ds-text-link\" href=\"https://www.linkedin.com/in/davidkitunov/\">Connect on LinkedIn<svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M6 18 18 6M6 6h12v12\"/></svg></a>",
+      "css": ".ds-text-link { display: inline-flex; align-items: center; gap: var(--space-sm, 12px); min-height: 44px; color: var(--color-accent, #3157d5); font: 400 1rem/1.6 var(--font-body, \"IBM Plex Sans\", sans-serif); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.25em; text-decoration-color: transparent; transition: text-decoration-color var(--dur-short, 180ms) var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1)); } .ds-text-link:hover { text-decoration-color: currentColor; } .ds-text-link:focus-visible { outline: 3px solid var(--color-focus, #3157d5); outline-offset: 4px; } .ds-icon { display: block; flex: 0 0 auto; width: 20px; height: 20px; stroke: currentColor; stroke-width: 1.6; fill: none; } @media (prefers-reduced-motion: reduce) { .ds-text-link { transition-duration: 0.01ms !important; } }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Paper navigation with a blue current location and animated fine underline; this preview is the visible link group, not the JavaScript menu toggle.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Main navigation\"><a href=\"#experience\" aria-current=\"location\">Experience</a><a href=\"#skills\">Foundation</a><a href=\"#education\">Education</a><a href=\"#projects\">Projects</a><a href=\"#contact\">Contact</a></nav>",
+      "css": ".ds-nav { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-32, 32px); background: var(--color-paper, #f5f3ee); color: var(--color-ink, #111f32); font: 400 0.875rem/1.6 var(--font-body, \"IBM Plex Sans\", sans-serif); } .ds-nav a { position: relative; display: inline-flex; align-items: center; min-height: 48px; color: inherit; text-decoration: none; } .ds-nav a::after { content: \"\"; position: absolute; left: 0; right: 0; bottom: 8px; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform var(--dur-short, 180ms) var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1)); } .ds-nav a:hover::after, .ds-nav a[aria-current=\"location\"]::after { transform: scaleX(1); } .ds-nav a[aria-current=\"location\"] { color: var(--color-accent, #3157d5); } .ds-nav a:focus-visible { outline: 3px solid var(--color-focus, #3157d5); outline-offset: 4px; } @media (max-width: 1000px) { .ds-nav { gap: var(--space-lg, 24px); } } @media (max-width: 640px) { .ds-nav { width: 100%; gap: 0 var(--space-lg, 24px); padding-bottom: var(--space-sm, 12px); font-size: 1rem; } } @media (prefers-reduced-motion: reduce) { .ds-nav a::after { transition-duration: 0.01ms !important; } }"
+    },
+    {
+      "name": "Project Card",
+      "kind": "card",
+      "refersTo": "project-card",
+      "description": "The shared project frame; its media region is kept blank in this asset-independent preview, while production uses the real project screenshot.",
+      "html": "<article class=\"ds-project\"><div class=\"ds-project-media\" aria-hidden=\"true\"></div><div class=\"ds-project-body\"><h3>Brogram</h3><p class=\"ds-project-context\">Learning project</p><p class=\"ds-project-description\">A workout planner with daily routines and progress saved in the browser.</p><ul class=\"ds-project-tech\" aria-label=\"Technologies\"><li>React</li></ul><div class=\"ds-project-links\"><a class=\"ds-text-link\" href=\"https://sweet-tiramisu-5bb5a9.netlify.app/\">View demo<svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M6 18 18 6M6 6h12v12\"/></svg></a><a class=\"ds-text-link\" href=\"https://github.com/greenchill/brogram\">Source code<svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M6 18 18 6M6 6h12v12\"/></svg></a></div></div></article>",
+      "css": ".ds-project { display: flex; flex-direction: column; min-width: 0; overflow: hidden; border: 1px solid var(--color-rule, #cbcfd3); border-radius: var(--radius-card, 12px); color: var(--color-ink, #111f32); font: 400 1rem/1.6 var(--font-body, \"IBM Plex Sans\", sans-serif); } .ds-project-media { flex: 0 0 auto; height: 280px; overflow: hidden; background: var(--color-image-black, #080a0d); border-bottom: 1px solid var(--color-rule, #cbcfd3); } .ds-project-body { display: flex; flex-direction: column; flex: 1; padding: var(--space-28, 28px); } .ds-project h3 { margin: 0; font: 500 clamp(1.5rem, 2.1vw, 2rem)/1.2 var(--font-display, \"Space Grotesk\", sans-serif); letter-spacing: -0.04em; overflow-wrap: break-word; text-wrap: balance; } .ds-project-context { color: var(--color-muted, #536276); font-size: 0.875rem; margin: var(--space-xs, 8px) 0 0; } .ds-project-description { margin: var(--space-lg, 24px) 0 0; color: var(--color-ink-2, #46566a); } .ds-project-tech { display: flex; flex-wrap: wrap; gap: var(--space-2xs, 4px) var(--space-md, 16px); padding: var(--space-lg, 24px) 0 0; margin: auto 0 0; list-style: none; font-size: 0.875rem; color: var(--color-muted, #536276); } .ds-project-tech li { white-space: nowrap; } .ds-project-links { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2xs, 4px) var(--space-lg, 24px); margin-top: var(--space-lg, 24px); padding-top: var(--space-sm, 12px); border-top: 1px solid var(--color-rule, #cbcfd3); } .ds-text-link { display: inline-flex; align-items: center; gap: var(--space-sm, 12px); min-height: 44px; color: var(--color-accent, #3157d5); font: 400 1rem/1.6 var(--font-body, \"IBM Plex Sans\", sans-serif); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.25em; text-decoration-color: transparent; transition: text-decoration-color var(--dur-short, 180ms) var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1)); } .ds-text-link:hover { text-decoration-color: currentColor; } .ds-text-link:focus-visible { outline: 3px solid var(--color-focus, #3157d5); outline-offset: 4px; } .ds-icon { display: block; flex: 0 0 auto; width: 20px; height: 20px; stroke: currentColor; stroke-width: 1.6; fill: none; } @media (prefers-reduced-motion: reduce) { .ds-text-link { transition-duration: 0.01ms !important; } } .ds-project-links .ds-text-link { font-size: 0.875rem; } .ds-project-links .ds-icon { width: 16px; height: 16px; } @media (max-width: 1000px) { .ds-project-media { height: 240px; } .ds-project-body { padding: var(--space-lg, 24px); } .ds-project-links { gap: var(--space-2xs, 4px) var(--space-md, 16px); } } @media (max-width: 640px) { .ds-project-media { height: 210px; } .ds-project-body { padding: var(--space-lg, 24px) var(--space-20, 20px); } .ds-project-description, .ds-project-links { margin-top: var(--space-20, 20px); } }"
+    },
+    {
+      "name": "Credentials Record",
+      "kind": "custom",
+      "refersTo": "credentials",
+      "description": "Three factual columns that become labeled, ruled rows on mobile.",
+      "html": "<dl class=\"ds-credentials\"><div><dt>Current role</dt><dd><strong>NOC Analyst</strong><span>Ness Digital Engineering</span></dd></div><div><dt>Completed degree</dt><dd><strong>B.Sc. Computer Science</strong><span>HIT, October 2026</span></dd></div><div><dt>Ongoing training</dt><dd><strong>Information Security &amp; Cybersecurity</strong><span>ITQ, in progress</span></dd></div></dl>",
+      "css": ".ds-credentials { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: var(--gap-columns, 32px); margin: var(--space-2xl, 64px) 0 0; padding-block: var(--space-28, 28px); border-top: 1px solid var(--color-rule, #cbcfd3); color: var(--color-ink, #111f32); font: 400 0.875rem/1.6 var(--font-body, \"IBM Plex Sans\", sans-serif); } .ds-credentials > div { min-width: 0; } .ds-credentials dt { color: var(--color-muted, #536276); margin-bottom: var(--space-xs, 8px); } .ds-credentials dd { margin: 0; } .ds-credentials strong { display: block; font-weight: 500; font-size: 1rem; line-height: 1.4; margin-bottom: var(--space-2xs, 4px); } .ds-credentials dd span { color: var(--color-muted, #536276); } @media (max-width: 640px) { .ds-credentials { grid-template-columns: minmax(0, 1fr); margin-top: var(--space-32, 32px); padding-block: 0; } .ds-credentials > div { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.5fr); gap: var(--space-md, 16px); padding-block: var(--space-20, 20px); border-bottom: 1px solid var(--color-rule, #cbcfd3); } .ds-credentials dt { margin: 0; } .ds-credentials strong { font-size: 0.875rem; } }"
+    },
+    {
+      "name": "Foundation Row",
+      "kind": "custom",
+      "refersTo": "foundation-row",
+      "description": "A ruled factual row whose category labels distinguish experience and training.",
+      "html": "<article class=\"ds-foundation-row\"><h3>Networking</h3><dl><div><dt>Professional experience</dt><dd>Initial troubleshooting involving network infrastructure.</dd></div><div><dt>ITQ training</dt><dd>Cisco networking, TCP/IP, routing, ACLs and VPNs.</dd></div></dl></article>",
+      "css": ".ds-foundation-row { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.8fr); column-gap: var(--gap-columns, 32px); padding-block: var(--space-32, 32px); border-top: 1px solid var(--color-rule, #cbcfd3); color: var(--color-ink, #111f32); font: 400 1rem/1.6 var(--font-body, \"IBM Plex Sans\", sans-serif); } .ds-foundation-row h3 { margin: 0; font: 500 1.75rem/1.2 var(--font-display, \"Space Grotesk\", sans-serif); letter-spacing: -0.04em; text-wrap: balance; } .ds-foundation-row dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap-columns, 32px); margin: 0; } .ds-foundation-row dt { font-size: 0.875rem; color: var(--color-accent, #3157d5); margin-bottom: var(--space-xs, 8px); font-weight: 500; } .ds-foundation-row dd { margin: 0; color: var(--color-ink-2, #46566a); } @media (max-width: 1000px) { .ds-foundation-row { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); } } @media (max-width: 640px) { .ds-foundation-row { grid-template-columns: minmax(0, 1fr); gap: var(--space-20, 20px); padding-block: var(--space-28, 28px); } .ds-foundation-row h3 { font-size: 1.5rem; } .ds-foundation-row dl { grid-template-columns: minmax(0, 1fr); gap: var(--space-20, 20px); } .ds-foundation-row dt { margin-bottom: var(--space-2xs, 4px); } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Editorial Tech",
+    "overview": "A readable professional record in a strong editorial frame. Warm paper, deep navy and restrained blue support clear typography and generous space. Space Grotesk supplies the geometric voice; IBM Plex Sans makes the factual detail easy to scan.\n\nThe system is composed from open columns, fine rules, tonal section changes and consistent project frames. Visual weight comes from type and contrast. Motion stays within brief interaction feedback, and content remains visible and usable without JavaScript.",
+    "keyCharacteristics": [
+      "Geometric display type with calm, readable body text.",
+      "Warm paper surfaces, navy contrast and restrained blue actions.",
+      "Open columns and fine rules for factual records.",
+      "Consistent rounded project frames with equal media heights.",
+      "Visible keyboard focus and restrained, reduced-motion-aware states."
+    ],
+    "rules": [
+      {
+        "name": "The One Accent Rule",
+        "body": "Use blue for actions, focus, active navigation and selected factual labels. Keep body copy and large page fields in the paper-and-navy family.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Voices Rule",
+        "body": "Use Space Grotesk for display hierarchy and IBM Plex Sans for reading and metadata; preserve their sans-serif fallbacks.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Surface Rule",
+        "body": "Separate adjacent content with tone, whitespace or a fine rule; keep the shipped surfaces and interaction states shadow-free.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do preserve the warm-paper, navy and restrained-blue palette and the two established font families.",
+      "Do use fine rules, clear labels and open spacing to organize factual content.",
+      "Do keep every project in the same card structure with equal media heights at each breakpoint.",
+      "Do keep keyboard focus visible, mobile controls reachable and content available without JavaScript.",
+      "Do preserve the distinction between work experience, training and familiarity when styling records."
+    ],
+    "donts": [
+      "Don't introduce a second accent family or replace the locally hosted type pairing.",
+      "Don't add shadows or decorative motion to the recorded flat surfaces.",
+      "Don't make information depend on scrolling animations, hover or an unopened mobile menu.",
+      "Don't treat ordinary technology names as selectable chips when no selection behavior exists."
+    ]
+  }
+}

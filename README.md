@@ -6,18 +6,20 @@ A single-page portfolio for networking, systems administration, and network-secu
 
 No installation or build step is required. Serve the repository root with any static HTTP server, for example `python -m http.server 8000`, then open `http://localhost:8000/`.
 
-- `index.html`: content, project links, decorative illustrations, and metadata.
-- `styles.css`: design tokens, responsive layout, fonts, reduced-motion and print styles.
+- `index.html`: semantic content, project links, inline icons, and metadata.
+- `tokens.css`: shared color, type, spacing, and layout values.
+- `base.css`: local fonts, element defaults, focus, reduced motion, and responsive token values.
+- `styles.css`: page composition and responsive component styles.
 - `app.js`: mobile navigation, current-section indicator, and footer year.
 - `public/`: local fonts, optimized thumbnails, icons, and the 1200 × 630 social preview.
 
-Content and navigation work without JavaScript. Fonts are self-hosted with `font-display: swap`. The illustrations are decorative and do not represent a deployment or measured project results.
+Content and navigation work without JavaScript. Fonts are self-hosted with `font-display: swap`. The Smart Crosswalk image shows the public team prototype, not deployed road infrastructure. No simulated interface or invented operational data is added to the portfolio.
 
 ## Design system
 
-The visual direction follows [Editorial Tech from MengTo/Skills](https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/editorial-tech/SKILL.md): expressive typography, an asymmetric hero, restrained color, fine dividers, and precisely framed media. The approved off-white/navy/blue identity and reduced-motion behavior remain the basis of the site.
+The whole page follows [Editorial Tech from MengTo/Skills](https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/editorial-tech/SKILL.md), with [Hallmark](https://github.com/Nutlope/hallmark) structure and preservation checks and [Impeccable](https://github.com/pbakaus/impeccable) responsive, typographic and review guidance. A large name masthead opens the page, professional experience occupies a navy passage, technical foundations form an open ledger, education uses a split record, and projects share one card system. The approved off-white/navy/blue identity remains. See `DESIGN.md` for the implemented visual rules and `PRODUCT.md` for factual constraints.
 
-All four projects use the same `.project` component inside `.projects-grid`, including the same image height at each breakpoint, description, technology row, and link layout. Shared CSS grid rows align adjacent cards. Keep learning-project labels explicit. Screenshot crops use `object-fit: cover`; Brogram uses `contain` against its black background to keep its text visible. Original image files remain unchanged.
+All four projects use the same `.project` component inside `.projects-grid`. Image panels are 280px on desktop, 240px at widths up to 1000px, and 210px up to 640px. Desktop grid rows give all four cards equal height; mobile card bodies size naturally to their content. Technology rows and links sit at the bottom. Keep learning-project labels explicit. Brogram and the SignLangModel report cover use `contain`; the other captures use `cover`. Asset pixels are preserved; origin metadata or sidecars document provenance.
 
 ## Content rules
 
@@ -37,8 +39,10 @@ Netlify is connected to production branch `main`. Publish the repository root wi
 
 Before publishing: review at 360, 768, and 1440 px; check keyboard navigation, reduced motion, contrast, anchors/assets, contact actions, project links, and console errors. Run `node --check app.js`.
 
-Pre-redesign production revision: `f9f441bdc31145dccc730f7ac683d539c5ac60d7`. It remains in Git history. Roll back by reverting the redesign merge commit on `main`, preserving later unrelated changes, or restore the previous deploy in Netlify. Do not force-push production history.
+Previous production revision for this complete style rebuild: `1bb997a4720a37827315ecd3c3d215e969599d65`, retained as `rollback/pre-complete-redesign-2026-11-02`. The original pre-portfolio revision is also retained as `rollback/pre-portfolio-rebuild-2026-11-02`. Roll back by reverting the relevant merge on `main`, preserving later unrelated changes, or restore the previous deploy in Netlify. Do not force-push production history.
+
+The final redesign was checked at 360, 390, 768, 1280, 1440 and 1920px without horizontal overflow. Hallmark static lint passed and retained all 19 destinations and four script hooks. CUA browser inspection replaces Hallmark's separate browser renderer in this environment. Axe reported no violations on the audited tablet and mobile views. Keyboard skip, menu Escape and focus transfer, JavaScript-free content/navigation, reduced-motion rules and 200% text reflow were checked. LinkedIn rejects automated link requests with HTTP 999; its existing URL is retained. Other external project/source links returned HTTP 200.
 
 ## Assets
 
-Space Grotesk and IBM Plex Sans use the SIL Open Font License; see the license texts in `public/fonts/`. Brogram and Stripe Store thumbnails are optimized versions of existing portfolio images. Social artwork and SVG illustrations are created for this portfolio.
+Space Grotesk and IBM Plex Sans use the SIL Open Font License; see `public/fonts/`. Brogram and Stripe Store thumbnails are existing optimized project images. `smart-crosswalk.jpg` is a CUA capture of the public demo, and `signlang-report.jpg` is page 1 of the linked project report, rendered with Poppler. Social preview and favicons retain the existing matching brand and factual positioning. No stock portraits or AI-generated project interfaces are used.
