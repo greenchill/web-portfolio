@@ -13,6 +13,12 @@ No installation or build step is required. Serve the repository root with any st
 
 Content and navigation work without JavaScript. Fonts are self-hosted with `font-display: swap`. The illustrations are decorative and do not represent a deployment or measured project results.
 
+## Design system
+
+The visual direction follows [Editorial Tech from MengTo/Skills](https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/editorial-tech/SKILL.md): expressive typography, an asymmetric hero, restrained color, fine dividers, and precisely framed media. The approved off-white/navy/blue identity and reduced-motion behavior remain the basis of the site.
+
+All four projects use the same `.project` component inside `.projects-grid`, including the same image height at each breakpoint, description, technology row, and link layout. Shared CSS grid rows align adjacent cards. Keep learning-project labels explicit. Screenshot crops use `object-fit: cover`; Brogram uses `contain` against its black background to keep its text visible. Original image files remain unchanged.
+
 ## Content rules
 
 Current title: **NOC Analyst**, Ness Digital Engineering, part-time, January 2026–Present. Engineering and administration roles are career interests. Distinguish professional work, ITQ training, and FortiGate familiarity.
