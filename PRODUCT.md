@@ -42,3 +42,7 @@ Current CV.pdf supplied by the user; existing project sources and demos; current
 ## Accessibility & Inclusion
 
 Responsive mobile and desktop layouts, semantic headings, visible keyboard focus, working skip link, accessible mobile navigation, reduced-motion support, readable contrast and no scroll-dependent content visibility.
+
+## Approved career-focus refinement
+
+Make junior networking, systems administration and network-security career interests explicit in the hero. Keep four equally styled projects as supporting evidence, with compact image/title rows and equal image heights. Consolidate repeated mobile credentials without removing facts. Use real source material for covers; the SignLang report diagram must not be presented as a live recognition capture. Add identifiable LinkedIn/GitHub SVGs alongside visible labels. Preserve current CV bytes and every existing project/contact destination.
