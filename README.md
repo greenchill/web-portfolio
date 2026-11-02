@@ -25,6 +25,8 @@ All four projects use the same `.project` component inside `.projects-grid`. Ima
 
 Current title: **NOC Analyst**, Ness Digital Engineering, part-time, January 2026–Present. Engineering and administration roles are career interests. Distinguish professional work, ITQ training, and FortiGate familiarity.
 
+The latest CV places DNS and GPO in systems training/familiarity and VMware vSphere and VMware Workstation in virtualization familiarity. Keep these labels separate from professional experience; do not imply production administration of these technologies.
+
 HIT B.Sc. Computer Science: completed October 2026; overall average 90.56/100. ITQ Information Security and Cybersecurity: August 2026–Present, in progress. Do not add honors, certifications, performance metrics, availability dates, or unconfirmed project ownership claims.
 
 Smart Crosswalk is a HIT team graduation prototype. David's Frontend Developer role and React frontend responsibilities are confirmed by the updated CV supplied on November 2, 2026. Its listed technologies describe his contribution: React, JavaScript, Tailwind CSS, and REST APIs. SignLangModel is a machine-learning course project. Brogram and Stripe Store are learning projects. Project technologies are not claims of professional experience.

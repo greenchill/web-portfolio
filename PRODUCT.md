@@ -28,6 +28,8 @@ User explicitly chose a contemporary editorial layout: warm off-white #F5F3EE, d
 
 ## Evidence on Hand
 
+The latest supplied CV lists DNS and GPO under systems training/familiarity, and VMware vSphere and VMware Workstation under virtualization familiarity. These are not professional experience claims.
+
 Current CV.pdf supplied by the user; existing project sources and demos; current semantic portfolio copy. Smart Crosswalk is a HIT team graduation prototype: David developed the complete React frontend, connected backend APIs and implemented dashboards, maps, event tables and data updates with loading/error states. SignLangModel is a machine-learning course project. Brogram and Stripe Store are learning projects. Project work supports the infrastructure career story; it does not imply a software-developer target role.
 
 ## Product Principles
