@@ -42,7 +42,7 @@ typography:
     letterSpacing: "-0.04em"
   career-focus:
     fontFamily: "Space Grotesk, sans-serif"
-    fontSize: "clamp(2.5rem, 4.6vw, 4rem)"
+    fontSize: "clamp(2rem, 3.6vw, 3.25rem)"
     fontWeight: 500
     lineHeight: 1.15
     letterSpacing: "-0.04em"
@@ -110,11 +110,11 @@ components:
   project-card:
     textColor: "{colors.ink}"
     rounded: "{rounded.card}"
-    padding: "24px"
-  credentials:
+    padding: "20px"
+  training-note:
     textColor: "{colors.ink}"
     typography: "{typography.label}"
-    padding: "24px 0"
+    padding: "20px 0"
   foundation-row:
     textColor: "{colors.ink}"
     padding: "24px 0 0"
@@ -180,7 +180,7 @@ Both faces are locally hosted variable WOFF2 files with `font-display: swap`. Di
 - **Display:** the two-line name uses `typography.display`; at the mobile breakpoint it uses `display-mobile`.
 - **Headline:** section headings use `typography.headline`. The mobile contact heading uses its own observed clamp (2.25rem, 9vw, 3rem).
 - **Title:** project and education headings use `typography.title`. Ledger headings and the current-position title have contextual size overrides rather than a new general scale.
-- **Career focus:** three prominent blue links use `typography.career-focus`. On mobile they become a compact three-column list; at larger text sizes they stack automatically.
+- **Career focus:** three prominent blue links use `typography.career-focus`. On mobile the duplicate focus navigation is omitted: the adjacent career-interest sentence names all three directions, and main navigation still links to the complete foundation section.
 - **Body:** standard text uses `typography.body`. Unclassed paragraphs are capped at 65ch; supporting hero and contact copy have narrower contextual measures.
 - **Lead:** longer introductory and inverse-section support text uses `typography.lead`; mobile hero and contact supporting copy return to body size.
 - **Label:** navigation, dates, category descriptions and technology lists use `typography.label`. Category labels use medium weight; they remain sentence case.
@@ -193,11 +193,11 @@ Headings balance their wrapping and allow long words to break. Paragraphs use pr
 
 The centered container has a maximum width of 1376px including padding. Desktop gutters are 64px and ordinary column gaps are 32px. Section padding is 72px above 1000px, 64px from 641–1000px, and 48px on mobile. Gutters reduce to 32px and then 20px.
 
-The hero pairs a two-line name and direct contact actions with three large career-focus links. The links navigate to real networking, systems and security records; they are career interests, not claimed job titles. The blue full stop echoes the existing wordmark. On mobile role and degree use separate lines, the actions share a row, and the focus links sit below them.
+The hero pairs a two-line name and direct contact actions with three large career-focus links. The links navigate to real networking, systems and security records; they are career interests, not claimed job titles. The blue full stop echoes the existing wordmark. On mobile role and degree use separate lines, the actions share a row, and LinkedIn/GitHub links follow. A single ITQ training note replaces the repeated credentials overview. Employer, degree completion, average and dates remain in their detailed records.
 
 Experience uses a full-width role record and three parallel responsibility columns. Technical foundations form a two-by-two open grid; each item keeps its experience/training/familiarity labels. Education uses two parallel records. These sections stack at 640px. At tablet widths the foundation evidence categories already stack within each column.
 
-Projects use a two-column grid on desktop and one column on mobile. Cards stretch equally within each desktop row, while different rows size naturally to their content. This avoids empty learning-project bodies. Every media panel is 380px on desktop, 240px at tablet and 220px on mobile. All four use the same soft-blue mat, inset image window and caption. All source images use `object-fit: cover` with top-centered crops in a taller window so actual project material remains prominent. Card bodies use 24px padding, reducing to 20px at tablet/mobile.
+Projects support the infrastructure career story with a compact two-column grid, becoming one column at 740px. Every card has an image beside its title, then the full description, technology list and source/demo links below. Desktop image panels are 200px wide and 148px high; at 1000px and below they are 128px wide and 116px high, reducing to 112px wide at 640px. All four panel and image heights match at each breakpoint. Images use containment in a soft-blue mat. Card titles are 24px on desktop and 20px at tablet/mobile. Bodies use 20px padding, reducing to 16px on mobile.
 
 The sticky header is accounted for by document scroll padding: 112px by default and 88px on mobile. Main navigation changes at the same 640px boundary used by the script.
 
@@ -211,7 +211,7 @@ The system is flat. There are no box shadows, text shadows, blur layers or eleva
 
 Project frames use the `card` radius and clip their image/content edges. Buttons use the smaller `button` radius. Editorial rows, section backgrounds and navigation remain square and open. Borders are thin (1px); the keyboard focus outline is deliberately stronger (3px, offset 4px).
 
-Download marks are 20px stroke SVGs with a 1.6 stroke width. Text links carry no repeated arrow suffixes. The mobile menu mark is formed by two CSS border lines, not a font glyph.
+Download marks and Feather LinkedIn/GitHub icons are 20px stroke SVGs with a 1.6 stroke width. Social icons accompany visible labels and are hidden from assistive technology. The Feather MIT notice is retained in public/feather-LICENSE.txt. Text links carry no repeated arrow suffixes. The mobile menu mark is formed by two CSS border lines, not a font glyph.
 
 ## Components
 
@@ -229,13 +229,13 @@ Compact, plainly labeled actions pair medium-weight body text with a restrained 
 
 ### Text links
 
-Blue text creates lightweight navigation. Standard text links have a 44px minimum target height; their underline becomes visible on hover. Project links use label-sized text and smaller icons. The contact email is a larger Space Grotesk link, with a rule-colored underline at rest that becomes blue on hover. Long email text may wrap anywhere.
+Blue text creates lightweight navigation. Standard text links have a 44px minimum target height; their underline becomes visible on hover. Project links use label-sized text. Social links retain icons and visible labels. The contact email is a larger Space Grotesk link, with a rule-colored underline at rest that becomes blue on hover. Long email text may wrap anywhere.
 
 ### Cards / Containers
 
-Project cards are consistent frames rather than floating tiles. Each has a fine border, the card radius, clipped overflow, a fixed-height media region and a flex column body. All four use the same structure and responsive media heights. Every screenshot/report uses the same paper image window and soft-blue mat, with consistent top-centered cropping. Captions name the depicted artifact and its project context; original asset pixels are unchanged.
+Project cards are compact, consistent frames. Their image/title row carries identification; their full-width body retains every factual description, technology and link. Card bodies stretch to align links within each pair. The real Brogram workout capture shows exercises and weight inputs. SignLangModel uses the landmark extraction illustration from page 5 of its course report; it is not a live inference screenshot. No recognition screenshot was found in the repository or report, so none is invented.
 
-Descriptions, plain technology lists and a ruled link row follow the title and contextual description. Technology names are unboxed text, not interactive chips. Cards have no whole-card hover or click state; their actual links provide interaction.
+Plain technology names remain unboxed text. Cards have no whole-card click action.
 
 ### Navigation
 
@@ -243,9 +243,9 @@ A sticky paper header pairs the compact `dk.` wordmark with sentence-case naviga
 
 At 640px and below, enhanced navigation exposes a Menu/Close button and a wrapping link area. The menu closes after an anchor choice, on Escape or on an outside click; Escape returns focus to the button. Anchor selection transfers focus to the destination. Resizing prevents focus from remaining on a hidden control. Without JavaScript, navigation links remain visible and the toggle stays hidden.
 
-### Credentials and factual ledgers
+### Training note and factual ledgers
 
-The credentials record uses quiet labels, medium-weight facts and secondary metadata. A fine top rule groups the three desktop columns; mobile rows add their own bottom rules.
+The hero closes with one compact, ruled ITQ training note. The NOC role and degree are already visible above it; full professional and education records follow without hiding facts behind controls.
 
 Technical-foundation items use a two-by-two open grid, each with a top rule, heading and factual categories. Their category names use blue medium-weight body text to distinguish the origin of evidence. On mobile both the outer row and the inner categories stack. Responsibility and education records use the same discipline of clear hierarchy and rules, with inverse colors where the surrounding surface is navy.
 

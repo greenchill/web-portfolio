@@ -19,9 +19,11 @@ Content and navigation work without JavaScript. Fonts are self-hosted with `font
 
 The whole page follows [Editorial Tech from MengTo/Skills](https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/editorial-tech/SKILL.md), with [Hallmark](https://github.com/Nutlope/hallmark) structure and preservation checks and [Impeccable](https://github.com/pbakaus/impeccable) responsive, typographic and review guidance. A two-line name and large career-focus links open the page. Professional experience occupies a compact navy passage, technical foundations use a two-by-two open grid, education uses two parallel records, and projects share one card system. The approved off-white/navy/blue identity remains. See `DESIGN.md` for the implemented visual rules and `PRODUCT.md` for factual constraints.
 
-All four projects use the same `.project` component inside `.projects-grid`. Media panels are 380px on desktop, 240px at widths up to 1000px, and 220px up to 640px. Each uses a soft-blue mat, inset image window and short caption. All source images use consistent top-centered `cover` crops in a taller window; their original pixels remain unchanged. Cards align within each desktop row while rows and mobile cards size naturally to their content. Technology lists and links align at the bottom of each pair. Keep the learning-project labels explicit.
+All four projects use the same compact `.project` component: an image beside the title and a full-width description/technology/link body. All four media panels are 148px high on desktop and 116px at 1000px and below. Images use `contain` in a shared soft-blue mat. The grid has two columns above 740px and one below; every project remains directly visible without JavaScript. Team and learning-project labels remain explicit.
 
-Section spacing is 72/64/48px across the desktop/tablet/mobile breakpoints. Career-focus links collapse automatically at enlarged text sizes. Versioned CSS URLs ensure an already-open browser receives the current styles after deployment.
+The hero states interest in junior networking, systems administration and network-security roles. The current NOC position stays distinct from career interests. On mobile the duplicated decorative focus navigation is omitted; the same directions are stated in the hero copy and their detailed foundation remains accessible through main navigation. One ITQ training note replaces the repeated role/degree overview. No unique factual information was removed.
+
+LinkedIn and GitHub use local inline Feather SVG symbols with visible text labels in the hero and contact section. The MIT notice is retained in `public/feather-LICENSE.txt`. Section spacing remains 72/64/48px across desktop/tablet/mobile.
 
 ## Content rules
 
@@ -51,8 +53,12 @@ The final redesign was checked at 360, 390, 768, 1280, 1440 and 1920px without h
 
 ## Assets
 
-Space Grotesk and IBM Plex Sans use the SIL Open Font License; see `public/fonts/`. Brogram and Stripe Store thumbnails are existing optimized project images. `smart-crosswalk.jpg` is a CUA capture of the public demo, and `signlang-report.jpg` is page 1 of the linked project report, rendered with Poppler. Social preview and favicons retain the existing matching brand and factual positioning. No stock portraits or AI-generated project interfaces are used.
+Space Grotesk and IBM Plex Sans use the SIL Open Font License; see `public/fonts/`. `stripe-store.webp` is the existing optimized storefront capture. `smart-crosswalk.jpg` is a CUA capture of the public team demo. `brogram-workout.jpg` is a native browser capture of the actual Day 01 Push Workout; no weights were entered or progress fabricated. `signlang-landmarks.jpg` is page 5 of the linked course report rendered with Poppler. Its repository and all 15 report pages contain no real inference frame, so the portfolio uses a clearly identified report diagram. Asset provenance is recorded in adjacent JSON files. Earlier covers remain in the repository history and are not presented as current. Social preview and favicons retain the existing matching brand and factual positioning. No stock portraits or AI-generated project interfaces are used.
 
 ## Compact editorial refinement
 
 The November 2 refinement retains all 19 prior destinations, the current CV bytes and all factual content. The previous production revision is `54c6802edf030a90d30beb9dbefaaaaff45adaf4`, retained in the merge history and rollback tag. Desktop page height at 1440px decreased from 5258px to 4570px; mobile at 360px decreased from 7484px to 7043px. These are layout measurements, not portfolio achievement claims.
+
+## Infrastructure-career refinement
+
+Previous production: `28eb5dae8de80b4357f5f7947a197b8842276cee`, preserved by `rollback/pre-career-focus-2026-11-02`. The update keeps all previous destinations, four projects and the exact current CV bytes. Mobile viewport 360px: hero reduced from 894px to 522px and project section from 2672px to approximately 1800px. Desktop viewport 1440px: projects reduced from 1695px to approximately 1010px. These are layout measurements only.

@@ -60,7 +60,7 @@
       type="font/woff2"
       crossorigin
     />
-    <link rel="stylesheet" href="styles.css?v=20261102-refined4" />
+    <link rel="stylesheet" href="styles.css?v=20261102-career2" />
     <script src="app.js" defer></script>
   </head>
   <body>
@@ -73,6 +73,18 @@
       <defs>
         <symbol id="download" viewBox="0 0 24 24">
           <path d="M12 3v12m-5-5 5 5 5-5M5 15v5h14v-5" />
+        </symbol>
+        <symbol id="linkedin" viewBox="0 0 24 24">
+          <path
+            d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+          />
+          <rect x="2" y="9" width="4" height="12" />
+          <circle cx="4" cy="4" r="2" />
+        </symbol>
+        <symbol id="github" viewBox="0 0 24 24">
+          <path
+            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+          />
         </symbol>
       </defs>
     </svg>
@@ -107,10 +119,10 @@
               ><span class="role-separator" aria-hidden="true">·</span
               ><span class="role-degree">B.Sc. Computer Science</span>
             </p>
+            <p class="hero-company">Ness Digital Engineering · Israel</p>
             <p class="hero-note">
-              At Ness Digital Engineering, I monitor infrastructure, perform
-              initial troubleshooting, and coordinate incidents with technical
-              teams.
+              Interested in junior networking, systems administration and
+              network security roles.
             </p>
             <div class="hero-actions">
               <a
@@ -128,15 +140,33 @@
                 ><span class="sr-only"> (PDF)</span></a
               >
             </div>
-            <a
-              class="text-link"
-              href="https://www.linkedin.com/in/davidkitunov/"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Connect on LinkedIn<span class="sr-only">
-                (opens in a new tab)</span
-              ></a
-            >
+            <div class="hero-socials">
+              <a
+                class="text-link"
+                href="https://www.linkedin.com/in/davidkitunov/"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><svg
+                  class="icon social-icon"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <use href="#linkedin" /></svg
+                >LinkedIn<span class="sr-only"> (opens in a new tab)</span></a
+              ><a
+                class="text-link"
+                href="https://github.com/greenchill"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><svg
+                  class="icon social-icon"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <use href="#github" /></svg
+                >GitHub<span class="sr-only"> (opens in a new tab)</span></a
+              >
+            </div>
           </div>
           <div class="hero-focus">
             <p>Building my career in</p>
@@ -157,37 +187,18 @@
               </li>
               <li>
                 <a href="#security"
-                  >Security<span class="sr-only"
+                  >Network security<span class="sr-only"
                     >: explore my foundation</span
                   ></a
                 >
               </li>
             </ul>
-            <p class="hero-location">Based in Israel</p>
           </div>
         </div>
-        <dl id="about" class="credentials" aria-label="Credentials overview">
-          <div>
-            <dt>Current role</dt>
-            <dd>
-              <strong>NOC Analyst</strong><span>Ness Digital Engineering</span>
-            </dd>
-          </div>
-          <div>
-            <dt>Completed degree</dt>
-            <dd>
-              <strong>B.Sc. Computer Science</strong
-              ><span>HIT, October 2026</span>
-            </dd>
-          </div>
-          <div>
-            <dt>Ongoing training</dt>
-            <dd>
-              <strong>Information Security &amp; Cybersecurity</strong
-              ><span>ITQ, in progress</span>
-            </dd>
-          </div>
-        </dl>
+        <p id="about" class="training-note">
+          <strong>Currently training at ITQ.</strong> Information Security &amp;
+          Cybersecurity, in progress.
+        </p>
       </section>
       <section
         id="experience"
@@ -349,8 +360,8 @@
         <div class="section-heading heading-split">
           <h2 id="projects-title">Selected projects</h2>
           <p>
-            Academic and learning projects<br class="desktop-break" />
-            supporting my computer science background.
+            Supporting work from my computer science studies and independent
+            learning.
           </p>
         </div>
         <div class="projects-grid">
@@ -366,19 +377,16 @@
                   alt="Smart Crosswalk team prototype: crossing overview and maps"
                 />
               </div>
-              <p class="project-media-caption">
-                React frontend · Team prototype
-              </p>
+            </div>
+            <div class="project-title">
+              <h3>Smart Crosswalk</h3>
+              <p class="project-context">HIT team graduation project</p>
             </div>
             <div class="project-body">
-              <div class="project-title">
-                <h3>Smart Crosswalk</h3>
-                <p class="project-context">HIT team graduation project</p>
-              </div>
               <p class="project-description">
                 <strong>Frontend Developer.</strong> Built the complete React
-                frontend for a team prototype focused on AI-assisted crosswalk
-                monitoring. Integrated backend APIs with dashboards, maps, event
+                frontend for an AI-assisted crosswalk monitoring prototype.
+                Integrated backend APIs; implemented dashboards, maps, event
                 tables and data updates, including loading and error states.
               </p>
               <ul class="project-tech" aria-label="Technologies">
@@ -410,23 +418,20 @@
             <div class="project-media">
               <div class="project-image-window">
                 <img
-                  src="public/signlang-report.jpg"
-                  width="1000"
-                  height="559"
+                  src="public/signlang-landmarks.jpg"
+                  width="900"
+                  height="503"
                   loading="lazy"
                   decoding="async"
-                  alt="Cover of the ASL alphabet recognition project report, showing hand landmarks"
+                  alt="Hand-landmark extraction diagram from the SignLangModel course report"
                 />
               </div>
-              <p class="project-media-caption">
-                Hand landmarks · Course report
-              </p>
+            </div>
+            <div class="project-title">
+              <h3>SignLangModel</h3>
+              <p class="project-context">Machine-learning course project</p>
             </div>
             <div class="project-body">
-              <div class="project-title">
-                <h3>SignLangModel</h3>
-                <p class="project-context">Machine-learning course project</p>
-              </div>
               <p class="project-description">
                 An ASL alphabet recognition project using hand landmarks, a
                 trained classifier and webcam-based inference.
@@ -460,23 +465,20 @@
             <div class="project-media">
               <div class="project-image-window">
                 <img
-                  src="public/brogram.webp"
-                  width="810"
-                  height="488"
+                  src="public/brogram-workout.jpg"
+                  width="619"
+                  height="400"
                   loading="lazy"
                   decoding="async"
-                  alt="Brogram workout planner welcome screen"
+                  alt="Brogram workout screen with exercises, sets, reps and weight inputs"
                 />
               </div>
-              <p class="project-media-caption">
-                Workout planner · Learning project
-              </p>
+            </div>
+            <div class="project-title">
+              <h3>Brogram</h3>
+              <p class="project-context">Learning project</p>
             </div>
             <div class="project-body">
-              <div class="project-title">
-                <h3>Brogram</h3>
-                <p class="project-context">Learning project</p>
-              </div>
               <p class="project-description">
                 A workout planner with daily routines and progress saved in the
                 browser.
@@ -515,13 +517,12 @@
                   alt="Stripe Store demo storefront with sticker products"
                 />
               </div>
-              <p class="project-media-caption">Storefront · Learning project</p>
+            </div>
+            <div class="project-title">
+              <h3>Stripe Store</h3>
+              <p class="project-context">Learning project</p>
             </div>
             <div class="project-body">
-              <div class="project-title">
-                <h3>Stripe Store</h3>
-                <p class="project-context">Learning project</p>
-              </div>
               <p class="project-description">
                 An e-commerce demo with a product catalog, shopping cart and
                 Stripe checkout integration.
@@ -572,12 +573,24 @@
                 href="https://www.linkedin.com/in/davidkitunov/"
                 target="_blank"
                 rel="noopener noreferrer"
+                ><svg
+                  class="icon social-icon"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <use href="#linkedin" /></svg
                 >LinkedIn<span class="sr-only"> (opens in a new tab)</span></a
               ><a
                 class="text-link"
                 href="https://github.com/greenchill"
                 target="_blank"
                 rel="noopener noreferrer"
+                ><svg
+                  class="icon social-icon"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <use href="#github" /></svg
                 >GitHub<span class="sr-only"> (opens in a new tab)</span></a
               ><a
                 class="text-link"
