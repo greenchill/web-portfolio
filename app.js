@@ -1,265 +1,70 @@
-﻿/* ================================
-   David Kitunov Portfolio - JavaScript
-   Modern interactions and animations
-   ================================ */
+// The content and links work without JavaScript. Everything here is an enhancement.
+const nav = document.querySelector("#primary-nav");
+const toggle = document.querySelector(".nav-toggle");
+const mobile = window.matchMedia("(max-width: 640px)");
 
-// ===== DOM Elements =====
-const navbar = document.querySelector('.navbar');
-const navProgressBar = document.querySelector('.nav-progress-bar');
-const navToggle = document.querySelector('.nav-toggle');
-const navLinks = document.querySelector('.nav-links');
-const revealElements = document.querySelectorAll('.reveal');
+if (nav && toggle) {
+  document.documentElement.classList.add("nav-enhanced");
+  toggle.hidden = false;
 
-// ===== Navbar Scroll Effect =====
-function handleNavbarScroll() {
-  const currentScroll = window.pageYOffset;
-  
-  // Add/remove scrolled class based on scroll position
-  if (currentScroll > 50) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
+  function setMenu(open, returnFocus = false) {
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.querySelector("span").textContent = open ? "Close" : "Menu";
+    nav.classList.toggle("is-open", open);
+    if (returnFocus) toggle.focus();
   }
 
-  // Keep a lightweight progress indicator in the navbar.
-  if (navProgressBar) {
-    const doc = document.documentElement;
-    const scrollable = doc.scrollHeight - doc.clientHeight;
-    const progress = scrollable > 0 ? (currentScroll / scrollable) * 100 : 0;
-    navProgressBar.style.width = `${Math.min(100, Math.max(0, progress)).toFixed(2)}%`;
-  }
+  toggle.addEventListener("click", () =>
+    setMenu(toggle.getAttribute("aria-expanded") !== "true"),
+  );
+  nav.addEventListener("click", (event) => {
+    const link = event.target.closest('a[href^="#"]');
+    if (!link || !mobile.matches) return;
+    setMenu(false);
+    const target = document.querySelector(link.getAttribute("href"));
+    if (target) {
+      target.setAttribute("tabindex", "-1");
+      target.focus({ preventScroll: true });
+      target.addEventListener(
+        "blur",
+        () => target.removeAttribute("tabindex"),
+        { once: true },
+      );
+    }
+  });
+  document.addEventListener("keydown", (event) => {
+    if (
+      event.key === "Escape" &&
+      toggle.getAttribute("aria-expanded") === "true"
+    )
+      setMenu(false, true);
+  });
+  document.addEventListener("click", (event) => {
+    if (mobile.matches && !event.target.closest(".site-header")) setMenu(false);
+  });
+  mobile.addEventListener("change", () => {
+    const focused = document.activeElement;
+    setMenu(false, mobile.matches && nav.contains(focused));
+    if (!mobile.matches && focused === toggle) nav.querySelector("a").focus();
+  });
 }
 
-window.addEventListener('scroll', handleNavbarScroll, { passive: true });
-window.addEventListener('load', handleNavbarScroll);
-
-// ===== Mobile Navigation Toggle =====
-if (navToggle && navLinks) {
-  navToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    navToggle.classList.toggle('active');
-  });
-  
-  // Close menu when clicking on a link
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('active');
-      navToggle.classList.remove('active');
-    });
-  });
-}
-
-// ===== Smooth Scroll for Navigation Links =====
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const targetId = this.getAttribute('href');
-    const targetElement = document.querySelector(targetId);
-    
-    if (targetElement) {
-      const navHeight = navbar.offsetHeight;
-      const targetPosition = targetElement.offsetTop - navHeight - 20;
-      
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
+if ("IntersectionObserver" in window && nav) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        nav.querySelectorAll("a").forEach((link) => {
+          if (link.getAttribute("href") === `#${entry.target.id}`)
+            link.setAttribute("aria-current", "location");
+          else link.removeAttribute("aria-current");
+        });
       });
-    }
-  });
-});
-
-// ===== Scroll Reveal Animation =====
-function revealOnScroll() {
-  const windowHeight = window.innerHeight;
-  const revealPoint = 120;
-  
-  revealElements.forEach(element => {
-    const elementTop = element.getBoundingClientRect().top;
-    
-    if (elementTop < windowHeight - revealPoint) {
-      element.classList.add('active');
-    }
-  });
+    },
+    { rootMargin: "-15% 0px -65% 0px" },
+  );
+  document
+    .querySelectorAll("main > section[id]")
+    .forEach((section) => observer.observe(section));
 }
-
-// Initialize reveal on load and scroll
-window.addEventListener('scroll', revealOnScroll, { passive: true });
-window.addEventListener('load', revealOnScroll);
-
-// ===== Typing Effect for Name =====
-(function initTypingEffect() {
-  const typedElement = document.getElementById('typed-name');
-  if (!typedElement || typedElement.dataset.typedDone === '1') return;
-  
-  const originalText = typedElement.textContent;
-  typedElement.textContent = '';
-  
-  // Create cursor
-  const cursor = document.createElement('span');
-  cursor.className = 'typing-cursor';
-  typedElement.appendChild(cursor);
-  
-  // Typing settings
-  const typingSpeed = 100;
-  const startDelay = 500;
-  
-  let charIndex = 0;
-  
-  function typeChar() {
-    if (charIndex < originalText.length) {
-      cursor.insertAdjacentText('beforebegin', originalText[charIndex]);
-      charIndex++;
-      setTimeout(typeChar, typingSpeed);
-    } else {
-      // Keep cursor blinking for a bit, then remove
-      setTimeout(() => {
-        cursor.remove();
-        typedElement.dataset.typedDone = '1';
-      }, 2000);
-    }
-  }
-  
-  // Respect reduced motion preference
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  
-  if (prefersReducedMotion) {
-    typedElement.textContent = originalText;
-  } else {
-    setTimeout(typeChar, startDelay);
-  }
-})();
-
-// ===== Active Navigation Link Highlight =====
-function updateActiveNavLink() {
-  const sections = document.querySelectorAll('section[id]');
-  const navHeight = navbar.offsetHeight;
-  
-  let currentSection = '';
-  
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - navHeight - 100;
-    const sectionHeight = section.offsetHeight;
-    
-    if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
-      currentSection = section.getAttribute('id');
-    }
-  });
-  
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.classList.remove('active');
-    if (link.getAttribute('href') === `#${currentSection}`) {
-      link.classList.add('active');
-    }
-  });
-}
-
-window.addEventListener('scroll', updateActiveNavLink, { passive: true });
-
-// ===== Parallax Effect for Glow Orbs =====
-function handleParallax() {
-  const scrolled = window.pageYOffset;
-  const orb1 = document.querySelector('.glow-orb-1');
-  const orb2 = document.querySelector('.glow-orb-2');
-  
-  if (orb1) {
-    orb1.style.transform = `translateY(${scrolled * 0.15}px)`;
-  }
-  if (orb2) {
-    orb2.style.transform = `translateY(${scrolled * -0.1}px)`;
-  }
-}
-
-// Only apply parallax on larger screens
-if (window.innerWidth > 768) {
-  window.addEventListener('scroll', handleParallax, { passive: true });
-}
-
-// ===== Skill Cards Hover Effect Enhancement =====
-document.querySelectorAll('.skill-card').forEach(card => {
-  card.addEventListener('mouseenter', function(e) {
-    const rect = this.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    
-    this.style.setProperty('--mouse-x', `${x}px`);
-    this.style.setProperty('--mouse-y', `${y}px`);
-  });
-});
-
-// ===== Project Cards Image Loading =====
-document.querySelectorAll('.project-image img').forEach(img => {
-  const card = img.closest('.project-card');
-
-  function applyCardTint() {
-    if (!card || !img.naturalWidth || !img.naturalHeight) return;
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    // Downsample aggressively for speed, then average visible pixels.
-    canvas.width = 32;
-    canvas.height = 32;
-    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-    const { data } = ctx.getImageData(0, 0, canvas.width, canvas.height);
-
-    let r = 0;
-    let g = 0;
-    let b = 0;
-    let count = 0;
-
-    for (let i = 0; i < data.length; i += 4) {
-      const alpha = data[i + 3];
-      if (alpha < 20) continue;
-      r += data[i];
-      g += data[i + 1];
-      b += data[i + 2];
-      count++;
-    }
-
-    if (!count) return;
-    const avgR = Math.round(r / count);
-    const avgG = Math.round(g / count);
-    const avgB = Math.round(b / count);
-    card.style.setProperty('--project-tint', `${avgR}, ${avgG}, ${avgB}`);
-  }
-
-  img.addEventListener('load', function() {
-    this.classList.add('loaded');
-    applyCardTint();
-  });
-  
-  // Handle already cached images
-  if (img.complete) {
-    img.classList.add('loaded');
-    applyCardTint();
-  }
-});
-
-// ===== Console Easter Egg =====
-console.log(
-`%cHey there, fellow developer!
-
-Looking for a DevOps Engineer / Software Developer?
-Let's connect: kitunovdavid57@gmail.com
-
-%c- David Kitunov`,
-'color: #10b981; font-size: 14px; font-weight: bold;',
-'color: #06b6d4; font-size: 12px; font-style: italic;'
-);
-
-// ===== Performance: Debounce scroll events =====
-function debounce(func, wait = 10) {
-  let timeout;
-  return function executedFunction(...args) {
-    const later = () => {
-      clearTimeout(timeout);
-      func(...args);
-    };
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-  };
-}
-
-// Apply debounce to heavy scroll handlers if needed
-// window.addEventListener('scroll', debounce(heavyFunction, 50));
-
+document.querySelector("#year").textContent = String(new Date().getFullYear());
